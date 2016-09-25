@@ -1,5 +1,8 @@
 # grumphp.yml
 parameters:
+    ascii:
+        failed: ~
+        succeeded: ~
     tasks:
         composer:
             strict: true
