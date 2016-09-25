@@ -1,6 +1,6 @@
 {
     "name": "steamscore/api",
-    "description": "SteamScore.info API",
+    "description": "SteamScore API",
     "type": "project",
     "homepage": "https://steamscore.info",
     "license": "MPL-2.0",

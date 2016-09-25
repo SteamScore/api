@@ -11,6 +11,7 @@ matrix:
 cache:
     directories:
         - $HOME/.composer/cache
+        - $HOME/.npm
 
 before_install:
     - phpenv config-rm xdebug.ini || return 0
@@ -19,6 +20,8 @@ install:
     - travis_retry composer self-update
     - travis_retry composer global require hirak/prestissimo
     - travis_retry composer install --no-interaction --prefer-dist
+    - travis_retry composer install --no-interaction --prefer-dist
+    - travis_retry npm install
 
 before_script:
     - mkdir -p build/coverage
@@ -29,3 +32,4 @@ script:
 
 after_script:
     - sh .travis.coverage.sh
+    - sh .travis.docs.sh
