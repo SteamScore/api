@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "25fe29686a47c879736a78ba9216475c",
-    "content-hash": "98fde9b778bc5ded8538c390cdbe2b1c",
+    "hash": "e31afe82d4d0e3e013b116aaeb9481ce",
+    "content-hash": "e5c9fa460d4e2acae1e069517750fca9",
     "packages": [
         {
             "name": "container-interop/container-interop",
@@ -1374,31 +1374,35 @@
         },
         {
             "name": "friendsofphp/php-cs-fixer",
-            "version": "v2.0.0-alpha",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/FriendsOfPHP/PHP-CS-Fixer.git",
-                "reference": "d0d76b434728fcf522270b67b454ed7e84e850ed"
+                "reference": "a00c7758246ffc18e7079537327ba12e48b59a64"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/FriendsOfPHP/PHP-CS-Fixer/zipball/d0d76b434728fcf522270b67b454ed7e84e850ed",
-                "reference": "d0d76b434728fcf522270b67b454ed7e84e850ed",
+                "url": "https://api.github.com/repos/FriendsOfPHP/PHP-CS-Fixer/zipball/a00c7758246ffc18e7079537327ba12e48b59a64",
+                "reference": "a00c7758246ffc18e7079537327ba12e48b59a64",
                 "shasum": ""
             },
             "require": {
                 "ext-tokenizer": "*",
-                "php": "^5.3.6 || ^7.0",
+                "php": "^5.3.6 || >=7.0 <7.2",
                 "sebastian/diff": "^1.1",
                 "symfony/console": "^2.3 || ^3.0",
                 "symfony/event-dispatcher": "^2.1 || ^3.0",
-                "symfony/filesystem": "^2.7 || ^3.0",
+                "symfony/filesystem": "^2.4 || ^3.0",
                 "symfony/finder": "^2.2 || ^3.0",
                 "symfony/polyfill-php54": "^1.0",
                 "symfony/process": "^2.3 || ^3.0",
                 "symfony/stopwatch": "^2.5 || ^3.0"
             },
+            "conflict": {
+                "hhvm": "<3.9"
+            },
             "require-dev": {
+                "phpunit/phpunit": "^4.5|^5",
                 "satooshi/php-coveralls": "^1.0"
             },
             "bin": [
@@ -1430,7 +1434,7 @@
                 }
             ],
             "description": "A tool to automatically fix PHP code style",
-            "time": "2016-05-26 23:59:22"
+            "time": "2016-09-25 13:13:34"
         },
         {
             "name": "gitonomy/gitlib",
@@ -3138,16 +3142,16 @@
         },
         {
             "name": "squizlabs/php_codesniffer",
-            "version": "3.0.0RC1",
+            "version": "3.0.x-dev",
             "source": {
                 "type": "git",
                 "url": "https://github.com/squizlabs/PHP_CodeSniffer.git",
-                "reference": "3d91716aa4e666bcbf8c46f9203e59c7a2a1ac56"
+                "reference": "403d76263f1fa9f58abdf47c54514bc44abb497d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/squizlabs/PHP_CodeSniffer/zipball/3d91716aa4e666bcbf8c46f9203e59c7a2a1ac56",
-                "reference": "3d91716aa4e666bcbf8c46f9203e59c7a2a1ac56",
+                "url": "https://api.github.com/repos/squizlabs/PHP_CodeSniffer/zipball/403d76263f1fa9f58abdf47c54514bc44abb497d",
+                "reference": "403d76263f1fa9f58abdf47c54514bc44abb497d",
                 "shasum": ""
             },
             "require": {
@@ -3194,7 +3198,7 @@
                 "phpcs",
                 "standards"
             ],
-            "time": "2016-09-02 00:30:35"
+            "time": "2016-09-23 01:13:36"
         },
         {
             "name": "symfony/config",
@@ -3899,8 +3903,8 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "friendsofphp/php-cs-fixer": 15,
-        "squizlabs/php_codesniffer": 5
+        "friendsofphp/php-cs-fixer": 20,
+        "squizlabs/php_codesniffer": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
