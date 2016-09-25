@@ -1,4 +1,5 @@
 # grumphp.yml
+---
 parameters:
     ascii:
         failed: ~
@@ -12,13 +13,18 @@ parameters:
         phpcs: ~
         phpcsfixer2:
             allow_risky: true
-            verbose: false
-        phplint: ~
+        phplint:
+            triggered_by:
+                - php
+                - php.dist
         phpunit: ~
         securitychecker: ~
         yamllint: ~
         xmllint:
-            load_from_net: true
-            x_include: true
             dtd_validation: true
+            load_from_net: true
             scheme_validation: true
+            triggered_by:
+                - xml
+                - xml.dist
+            x_include: true

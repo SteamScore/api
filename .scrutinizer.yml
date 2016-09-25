@@ -3,6 +3,7 @@ before_commands:
 
 tools:
     external_code_coverage:
+        runs: 2
         timeout: 1200
     php_code_coverage:
         enabled: true

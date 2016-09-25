@@ -51,5 +51,4 @@ return PhpCsFixer\Config::create()->setRules([
     'short_array_syntax' => true,
     'strict_comparison' => true,
     'strict_param' => true,
-
 ])->finder($finder);
