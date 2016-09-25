@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * This file is part of SteamScore.
  *
@@ -17,7 +19,7 @@ use Psr\Http\Message\ServerRequestInterface as Request;
 use Zend\Diactoros\Response\JsonResponse;
 use Zend\Stratigility\MiddlewareInterface;
 
-class VersionAction implements MiddlewareInterface
+final class VersionAction implements MiddlewareInterface
 {
     /**
      * {@inheritdoc}
