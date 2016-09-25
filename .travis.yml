@@ -3,29 +3,29 @@ language: php
 sudo: false
 
 matrix:
-  fast_finish: true
-  include:
-    - php: 7.0
-    - php: 7.1
+    fast_finish: true
+    include:
+        - php: 7.0
+        - php: 7.1
 
 cache:
-  directories:
-    - $HOME/.composer/cache
+    directories:
+        - $HOME/.composer/cache
 
 before_install:
-    - mv $HOME/.phpenv/versions/$(phpenv version-name)/etc/conf.d/xdebug.ini $HOME/xdebug.ini || return 0
+    - phpenv config-rm xdebug.ini || return 0
 
 install:
-  - travis_retry composer self-update
-  - travis_retry composer global require hirak/prestissimo
-  - travis_retry composer install --no-interaction --prefer-dist
+    - travis_retry composer self-update
+    - travis_retry composer global require hirak/prestissimo
+    - travis_retry composer install --no-interaction --prefer-dist
 
 before_script:
-  - cp $HOME/xdebug.ini $HOME/.phpenv/versions/$(phpenv version-name)/etc/conf.d/xdebug.ini || return 0
-  - mkdir -p build/logs
+    - mkdir -p build/coverage
+    - mkdir -p build/logs
 
 script:
-  - ./vendor/bin/grumphp run
+    - ./vendor/bin/grumphp run
 
 after_script:
-  - sh .travis.coverage.sh
+    - sh .travis.coverage.sh
