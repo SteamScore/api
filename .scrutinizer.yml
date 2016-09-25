@@ -9,14 +9,14 @@ tools:
     php_code_sniffer:
         enabled: true
         filter:
-            paths: ["config/*", "public/*", "src/*", "test/*"]
+            paths: ["config/*", "src/*", "test/*", "web/*"]
     php_cpd:
         enabled: true
         excluded_dirs: ["data", "test", "vendor"]
     php_cs_fixer:
         enabled: true
         filter:
-            paths: ["config/*", "public/*", "src/*", "test/*"]
+            paths: ["config/*", "src/*", "test/*", "web/*"]
     php_loc:
         enabled: true
         excluded_dirs: ["data", "test", "vendor"]
@@ -26,9 +26,9 @@ tools:
     php_analyzer:
         enabled: true
         filter:
-            paths: ["config/*", "public/*", "src/*", "test/*"]
+            paths: ["config/*", "src/*", "test/*", "web/*"]
     php_hhvm:
         enabled: true
         filter:
-            paths: ["config/*", "public/*", "src/*", "test/*"]
+            paths: ["config/*", "src/*", "test/*", "web/*"]
     sensiolabs_security_checker: true
