@@ -15,7 +15,6 @@ declare(strict_types=1);
 use Zend\ServiceManager\Config;
 use Zend\ServiceManager\ServiceManager;
 
-/* @var ArrayObject $container */
 $config = require __DIR__.'/config.php';
 $container = new ServiceManager();
 

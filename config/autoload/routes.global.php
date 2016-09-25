@@ -13,6 +13,7 @@ declare(strict_types=1);
  */
 
 use SteamScore\Api\Http\Actions;
+use SteamScore\Api\Http\Factories;
 
 return [
     'dependencies' => [
@@ -20,6 +21,7 @@ return [
             Zend\Expressive\Router\RouterInterface::class => Zend\Expressive\Router\ZendRouter::class,
         ],
         'factories' => [
+            Actions\VersionAction::class => Factories\VersionActionFactory::class,
         ],
     ],
     'routes' => [

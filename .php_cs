@@ -1,5 +1,5 @@
 <?php
-declare(strict_types=1);
+declare(strict_types = 1);
 
 /*
  * This file is part of SteamScore.
@@ -31,7 +31,7 @@ return PhpCsFixer\Config::create()->setRules([
     'dir_constant' => true,
     'ereg_to_preg' => true,
     'header_comment' => [
-        'header' => $header
+        'header' => $header,
     ],
     'linebreak_after_opening_tag' => true,
     'modernize_types_casting' => true,

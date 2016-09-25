@@ -12,16 +12,12 @@ declare(strict_types=1);
  * file, You can obtain one at http://mozilla.org/MPL/2.0/.
  */
 
-use Interop\Container\ContainerInterface;
 use Zend\Expressive\Application;
 
 chdir(dirname(__DIR__));
 require 'vendor/autoload.php';
 
-/** @var ContainerInterface $container */
 $container = require 'config/container.php';
-
-/** @var Application $app */
 $app = $container->get(Application::class);
 
 $app->run();
