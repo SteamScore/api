@@ -1,0 +1,44 @@
+{
+    "name": "steamscore/steamscore",
+    "description": "Zend expressive skeleton. Begin developing PSR-7 middleware applications in seconds",
+    "type": "project",
+    "homepage": "https://steamscore.info",
+    "license": "MPL-2.0",
+    "authors": [
+        {
+            "name": "Jonas Stendahl",
+            "email": "jonas@stendahl.me"
+        }
+    ],
+    "support": {
+       "issues": "https://github.com/jyggen/SteamScore/issues",
+       "source": "https://github.com/jyggen/SteamScore"
+    },
+    "require": {
+        "php": "^7.0",
+        "filp/whoops": "^2.0",
+        "roave/security-advisories": "dev-master",
+        "zendframework/zend-expressive": "^1.0",
+        "zendframework/zend-expressive-helpers": "^2.0",
+        "zendframework/zend-expressive-zendrouter": "^1.0",
+        "zendframework/zend-servicemanager": "^3.0",
+        "zendframework/zend-stdlib": "^3.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^5.0",
+        "squizlabs/php_codesniffer": "^3.0",
+
+    },
+    "autoload": {
+        "psr-4": {
+            "SteamScore\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "SteamScore\\Tests\\": "test/"
+        }
+    },
+    "scripts": {
+    }
+}
