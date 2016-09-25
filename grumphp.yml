@@ -1,0 +1,21 @@
+# grumphp.yml
+parameters:
+    tasks:
+        composer:
+            strict: true
+        git_conflict: ~
+        jsonlint:
+            detect_key_conflicts: true
+        phpcs: ~
+        phpcsfixer2:
+            allow_risky: true
+            verbose: false
+        phplint: ~
+        phpunit: ~
+        securitychecker: ~
+        yamllint: ~
+        xmllint:
+            load_from_net: true
+            x_include: true
+            dtd_validation: true
+            scheme_validation: true
