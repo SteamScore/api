@@ -15,4 +15,20 @@ declare(strict_types=1);
 return [
     'debug' => false,
     'config_cache_enabled' => true,
+    'dependencies' => [
+        'invokables' => [
+            'Zend\Expressive\Whoops' => Whoops\Run::class,
+            'Zend\Expressive\WhoopsPageHandler' => Whoops\Handler\PrettyPageHandler::class,
+        ],
+        'factories' => [
+            'Zend\Expressive\FinalHandler' => Zend\Expressive\Container\WhoopsErrorHandlerFactory::class,
+        ],
+    ],
+    'whoops' => [
+        'json_exceptions' => [
+            'display' => true,
+            'show_trace' => true,
+            'ajax_only' => false,
+        ],
+    ],
 ];

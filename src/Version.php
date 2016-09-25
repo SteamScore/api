@@ -18,6 +18,9 @@ use SebastianBergmann\Version as SebastianVersion;
 
 final class Version extends SebastianVersion
 {
+    /**
+     * @var string
+     */
     const VERSION = '1.0';
 
     /**
