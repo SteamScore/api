@@ -10,6 +10,8 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/.
  */
 
+use SteamScore\Api\Http\Actions;
+
 return [
     'dependencies' => [
         'invokables' => [
@@ -19,12 +21,11 @@ return [
         ],
     ],
     'routes' => [
-        // Example:
-        // [
-        //     'name' => 'home',
-        //     'path' => '/',
-        //     'middleware' => App\Action\HomePageAction::class,
-        //     'allowed_methods' => ['GET'],
-        // ],
+        [
+            'name' => 'version',
+            'path' => '/version',
+            'middleware' => Actions\VersionAction::class,
+            'allowed_methods' => ['GET'],
+        ],
     ],
 ];
