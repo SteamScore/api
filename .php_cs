@@ -3,7 +3,7 @@
 /*
  * This file is part of SteamScore.
  *
- * (c) Jonas Stendahl <jonas@stendahl.me>
+ * (c) SteamScore <code@steamscore.info>
  *
  * This Source Code Form is subject to the terms of the Mozilla Public
  * License, v. 2.0. If a copy of the MPL was not distributed with this
@@ -17,7 +17,7 @@ $finder = Finder::create()->exclude('build')->exclude('data')->in(__DIR__);
 $header = <<<'EOF'
 This file is part of SteamScore.
 
-(c) Jonas Stendahl <jonas@stendahl.me>
+(c) SteamScore <code@steamscore.info>
 
 This Source Code Form is subject to the terms of the Mozilla Public
 License, v. 2.0. If a copy of the MPL was not distributed with this
