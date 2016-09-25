@@ -1,8 +1,0 @@
-{
-    "private": true,
-    "devDependencies": {
-        "aglio": "^2.0.0",
-        "dredd": "^2.0.0",
-        "hercule": "^3.0.0"
-    }
-}
