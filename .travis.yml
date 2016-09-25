@@ -20,7 +20,11 @@ install:
     - travis_retry composer self-update
     - travis_retry composer global require hirak/prestissimo
     - travis_retry composer install --no-interaction --prefer-dist
+    - travis_retry . $HOME/.nvm/nvm.sh
+    - travis_retry nvm install stable
+    - travis_retry nvm use stable
     - travis_retry npm install
+
 
 before_script:
     - mkdir -p build/coverage
