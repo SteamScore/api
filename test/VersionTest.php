@@ -12,10 +12,10 @@ declare(strict_types=1);
  * file, You can obtain one at http://mozilla.org/MPL/2.0/.
  */
 
-namespace SteamScore\Api\Tests\Http\Actions;
+namespace SteamScore\Api\Tests;
 
 use PHPUnit\Framework\TestCase;
 
-class VersionActionTest extends TestCase
+final class VersionTest extends TestCase
 {
 }
