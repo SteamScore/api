@@ -12,6 +12,8 @@ declare(strict_types=1);
  * file, You can obtain one at http://mozilla.org/MPL/2.0/.
  */
 
+use SteamScore\Api\Version;
+
 return [
     'debug' => false,
     'config_cache_enabled' => true,
@@ -24,6 +26,7 @@ return [
             'Zend\Expressive\FinalHandler' => Zend\Expressive\Container\WhoopsErrorHandlerFactory::class,
         ],
     ],
+    'version' => (new Version(getcwd()))->getVersion(),
     'whoops' => [
         'json_exceptions' => [
             'display' => true,

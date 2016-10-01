@@ -25,11 +25,11 @@ final class Version extends SebastianVersion
 
     /**
      * Constructor.
+     *
+     * @param string $cwd
      */
-    public function __construct()
+    public function __construct(string $cwd)
     {
-        // Let's use getcwd() since all entry points (hopefully) use
-        // chdir() to change the working directory to our root path.
-        return parent::__construct(self::VERSION, getcwd());
+        return parent::__construct(self::VERSION, $cwd);
     }
 }

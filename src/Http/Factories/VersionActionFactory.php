@@ -14,18 +14,20 @@ declare(strict_types=1);
 
 namespace SteamScore\Api\Http\Factories;
 
+use Interop\Container\ContainerInterface;
 use SteamScore\Api\Http\Actions\VersionAction;
-use SteamScore\Api\Version;
 
 final class VersionActionFactory
 {
     /**
      * Creates an instance of `SteamScore\Api\Http\Actions\VersionAction`.
      *
+     * @param ContainerInterface $container
+     *
      * @return VersionAction
      */
-    public function __invoke()
+    public function __invoke(ContainerInterface $container)
     {
-        return new VersionAction(new Version());
+        return new VersionAction($container->get('config')['version']);
     }
 }
