@@ -19,6 +19,7 @@
         "filp/whoops": "^2.0",
         "doctrine/orm": "^2.0",
         "sebastian/version": "^2.0",
+        "symfony/console": "^3.0",
         "zendframework/zend-expressive": "^1.0",
         "zendframework/zend-expressive-helpers": "^2.0",
         "zendframework/zend-expressive-zendrouter": "^1.0",
