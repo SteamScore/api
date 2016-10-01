@@ -31,6 +31,7 @@
         "friendsofphp/php-cs-fixer": "^v2.0.0@dev",
         "jakub-onderka/php-parallel-lint": "^0.9",
         "phpro/grumphp": "^0.9",
+        "phpspec/prophecy": "^1.0",
         "phpunit/phpunit": "^5.0",
         "sensiolabs/security-checker": "^4.0",
         "squizlabs/php_codesniffer": "^2.0"
