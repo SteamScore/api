@@ -1,5 +1,5 @@
 # SteamScore API
-
+[![License](https://img.shields.io/github/license/SteamScore/api.svg?style=flat-square&maxAge=3600)](https://www.mozilla.org/en-US/MPL/2.0/)
 [![Build Status](https://img.shields.io/travis/SteamScore/api/master.svg?style=flat-square&maxAge=3600)](https://travis-ci.org/SteamScore/api)
 [![Code Coverage](https://img.shields.io/scrutinizer/coverage/g/SteamScore/api/master.svg?style=flat-square&maxAge=3600)](https://scrutinizer-ci.com/g/SteamScore/api/)
 [![Scrutinizer Quality Score](https://img.shields.io/scrutinizer/g/SteamScore/api.svg?style=flat-square&maxAge=3600)](https://scrutinizer-ci.com/g/SteamScore/api/)
