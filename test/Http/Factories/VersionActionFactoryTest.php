@@ -19,12 +19,15 @@ use SteamScore\Api\Http\Actions\VersionAction;
 use SteamScore\Api\Http\Factories\VersionActionFactory;
 use SteamScore\Api\Tests\AbstractTestCase;
 
+/**
+ * @coversDefaultClass SteamScore\Api\Http\Factories\VersionActionFactory
+ */
 final class VersionActionFactoryTest extends AbstractTestCase
 {
     /**
      * Tests that the factory is invokable.
      */
-    public function testInvokability()
+    public function testIfInvokable()
     {
         $container = $this->prophesize(ContainerInterface::class);
         $factory = new VersionActionFactory();

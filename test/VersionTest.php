@@ -15,7 +15,20 @@ declare(strict_types=1);
 namespace SteamScore\Api\Tests;
 
 use PHPUnit\Framework\TestCase;
+use SteamScore\Api\Version;
 
+/**
+ * @coversDefaultClass SteamScore\Api\Version
+ */
 final class VersionTest extends TestCase
 {
+    /**
+     * Tests that the class is instantiable.
+     */
+    public function testIfInstantiable()
+    {
+        $version = new Version(__DIR__);
+
+        $this->assertInstanceOf(Version::class, $version);
+    }
 }

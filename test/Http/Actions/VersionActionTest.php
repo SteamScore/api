@@ -15,7 +15,26 @@ declare(strict_types=1);
 namespace SteamScore\Api\Tests\Http\Actions;
 
 use PHPUnit\Framework\TestCase;
+use Psr\Http\Message\ResponseInterface;
+use Psr\Http\Message\ServerRequestInterface;
+use SteamScore\Api\Http\Actions\VersionAction;
 
+/**
+ * @coversDefaultClass SteamScore\Api\Http\Actions\VersionAction
+ */
 class VersionActionTest extends TestCase
 {
+    /**
+     * Tests that the action is invokable.
+     */
+    public function testIfInvokable()
+    {
+        $request = $this->prophesize(ServerRequestInterface::class)->reveal();
+        $inResponse = $this->prophesize(ResponseInterface::class)->reveal();
+        $action = new VersionAction('1.0.0');
+        $outResponse = $action($request, $inResponse);
+
+        $this->assertInstanceOf(ResponseInterface::class, $outResponse);
+        $this->assertNotSame($inResponse, $outResponse);
+    }
 }
