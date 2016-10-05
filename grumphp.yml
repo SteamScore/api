@@ -5,8 +5,7 @@ parameters:
         failed: ~
         succeeded: ~
     tasks:
-        composer:
-            strict: true
+        composer: ~
         git_conflict: ~
         jsonlint:
             detect_key_conflicts: true
