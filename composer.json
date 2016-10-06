@@ -22,7 +22,6 @@
         "lcobucci/jwt": "^3.0",
         "monolog/monolog": "^1.0",
         "ramsey/uuid": "^3.0",
-        "roave/security-advisories": "dev-master",
         "sebastian/version": "^2.0",
         "symfony/console": "^3.0",
         "zendframework/zend-expressive": "^1.0",
