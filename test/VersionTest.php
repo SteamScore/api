@@ -18,7 +18,7 @@ use PHPUnit\Framework\TestCase;
 use SteamScore\Api\Version;
 
 /**
- * @coversDefaultClass SteamScore\Api\Version
+ * @coversDefaultClass Version
  */
 final class VersionTest extends TestCase
 {

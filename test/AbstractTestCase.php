@@ -24,11 +24,17 @@ abstract class AbstractTestCase extends TestCase
      */
     protected $prophet;
 
-    protected function setup()
+    /**
+     * {@inheritdoc}
+     */
+    protected function setUp()
     {
         $this->prophet = new Prophet();
     }
 
+    /**
+     * {@inheritdoc}
+     */
     protected function tearDown()
     {
         $this->prophet->checkPredictions();

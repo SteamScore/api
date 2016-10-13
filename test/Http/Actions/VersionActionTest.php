@@ -20,7 +20,7 @@ use Psr\Http\Message\ServerRequestInterface;
 use SteamScore\Api\Http\Actions\VersionAction;
 
 /**
- * @coversDefaultClass SteamScore\Api\Http\Actions\VersionAction
+ * @coversDefaultClass VersionAction
  */
 class VersionActionTest extends TestCase
 {

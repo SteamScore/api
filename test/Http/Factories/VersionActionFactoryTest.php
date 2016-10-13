@@ -20,7 +20,7 @@ use SteamScore\Api\Http\Factories\VersionActionFactory;
 use SteamScore\Api\Tests\AbstractTestCase;
 
 /**
- * @coversDefaultClass SteamScore\Api\Http\Factories\VersionActionFactory
+ * @coversDefaultClass VersionActionFactory
  */
 final class VersionActionFactoryTest extends AbstractTestCase
 {
