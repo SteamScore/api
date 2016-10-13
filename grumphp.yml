@@ -1,30 +1,31 @@
 # grumphp.yml
 ---
 parameters:
-    ascii:
-        failed: ~
-        succeeded: ~
-    tasks:
-        composer:
-            strict: true
-        git_conflict: ~
-        jsonlint:
-            detect_key_conflicts: true
-        phpcs: ~
-        phpcsfixer2:
-            allow_risky: true
-        phplint:
-            triggered_by:
-                - php
-                - php.dist
-        phpunit: ~
-        securitychecker: ~
-        yamllint: ~
-        xmllint:
-            dtd_validation: true
-            load_from_net: true
-            scheme_validation: true
-            triggered_by:
-                - xml
-                - xml.dist
-            x_include: true
+  ascii:
+    failed: ~
+    succeeded: ~
+  tasks:
+    composer:
+      no_check_all: true
+      strict: true
+    git_conflict: ~
+    jsonlint:
+      detect_key_conflicts: true
+    phpcs: ~
+    phpcsfixer2:
+      allow_risky: true
+    phplint:
+      triggered_by:
+        - php
+        - php.dist
+    phpunit: ~
+    securitychecker: ~
+    yamllint: ~
+    xmllint:
+      dtd_validation: true
+      load_from_net: true
+      scheme_validation: true
+      triggered_by:
+        - xml
+        - xml.dist
+      x_include: true
