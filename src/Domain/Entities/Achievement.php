@@ -20,16 +20,34 @@ use Ramsey\Uuid\UuidInterface;
 final class Achievement
 {
     /**
+     * @var Game
+     */
+    private $game;
+
+    /**
      * @var UuidInterface
      */
     private $id;
 
     /**
      * Constructor.
+     *
+     * @param Game $game
      */
-    public function __construct()
+    public function __construct(Game $game)
     {
+        $this->game = $game;
         $this->id = Uuid::uuid4();
+    }
+
+    /**
+     * Gets the game the achievement belongs to.
+     *
+     * @return Game
+     */
+    public function getGame() : Game
+    {
+        return $this->game;
     }
 
     /**

@@ -14,6 +14,7 @@ declare(strict_types=1);
 
 namespace SteamScore\Api\Tests\Domain\Entities;
 
+use Doctrine\Common\Collections\Collection;
 use PHPUnit\Framework\TestCase;
 use Ramsey\Uuid\UuidInterface;
 use SteamScore\Api\Domain\Entities\Game;
@@ -24,12 +25,22 @@ use SteamScore\Api\Domain\Entities\Game;
 class GameTest extends TestCase
 {
     /**
+     * Tests that `getAchievements()` returns a collection.
+     */
+    public function testGetAchievements()
+    {
+        $game = new Game();
+
+        $this->assertInstanceOf(Collection::class, $game->getAchievements());
+    }
+
+    /**
      * Tests that `getId()` returns a UUID.
      */
     public function testGetId()
     {
-        $achievement = new Game();
+        $game = new Game();
 
-        $this->assertInstanceOf(UuidInterface::class, $achievement->getId());
+        $this->assertInstanceOf(UuidInterface::class, $game->getId());
     }
 }

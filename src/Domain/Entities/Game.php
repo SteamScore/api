@@ -14,11 +14,18 @@ declare(strict_types=1);
 
 namespace SteamScore\Api\Domain\Entities;
 
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Ramsey\Uuid\Uuid;
 use Ramsey\Uuid\UuidInterface;
 
 final class Game
 {
+    /**
+     * @var Collection
+     */
+    private $achievements;
+
     /**
      * @var UuidInterface
      */
@@ -29,7 +36,18 @@ final class Game
      */
     public function __construct()
     {
+        $this->achievements = new ArrayCollection();
         $this->id = Uuid::uuid4();
+    }
+
+    /**
+     * Gets all achievements that belongs to the game.
+     *
+     * @return Collection
+     */
+    public function getAchievements() : Collection
+    {
+        return $this->achievements;
     }
 
     /**
