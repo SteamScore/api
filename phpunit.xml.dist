@@ -1,12 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="vendor/phpunit/phpunit/phpunit.xsd" bootstrap="vendor/autoload.php" colors="true">
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="vendor/phpunit/phpunit/phpunit.xsd"
+         bootstrap="vendor/autoload.php"
+         backupGlobals="false"
+         verbose="true">
     <testsuites>
         <testsuite name="SteamScore API">
             <directory>./test</directory>
         </testsuite>
     </testsuites>
     <filter>
-        <whitelist>
+        <whitelist processUncoveredFilesFromWhitelist="true">
             <directory suffix=".php">./src</directory>
         </whitelist>
     </filter>
@@ -15,4 +19,5 @@
         <log type="coverage-clover" target="build/logs/clover.xml" />
         <log type="junit" target="build/logs/junit.xml" logIncompleteSkipped="false" />
     </logging>
+    <what>heh</what>
 </phpunit>

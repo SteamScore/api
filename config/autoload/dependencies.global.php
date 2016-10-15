@@ -12,6 +12,8 @@ declare(strict_types=1);
  * file, You can obtain one at http://mozilla.org/MPL/2.0/.
  */
 
+use Doctrine\ORM\EntityManagerInterface;
+use SteamScore\Api\Domain\Factories;
 use Zend\Expressive\Application;
 use Zend\Expressive\Container\ApplicationFactory;
 use Zend\Expressive\Helper;
@@ -23,6 +25,7 @@ return [
         ],
         'factories' => [
             Application::class => ApplicationFactory::class,
+            EntityManagerInterface::class => Factories\EntityManagerFactory::class,
             Helper\UrlHelper::class => Helper\UrlHelperFactory::class,
         ],
     ],

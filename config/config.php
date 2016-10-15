@@ -12,6 +12,7 @@ declare(strict_types=1);
  * file, You can obtain one at http://mozilla.org/MPL/2.0/.
  */
 
+use Dotenv\Dotenv;
 use Zend\Stdlib\ArrayUtils;
 use Zend\Stdlib\Glob;
 
@@ -21,6 +22,10 @@ $config = [];
 if (is_file($cachedConfigFile) === true) {
     return new ArrayObject(include $cachedConfigFile, ArrayObject::ARRAY_AS_PROPS);
 }
+
+$dotenv = new Dotenv('.');
+
+$dotenv->load();
 
 foreach (Glob::glob('config/autoload/{{,*.}global,{,*.}local}.php', Glob::GLOB_BRACE) as $file) {
     $config = ArrayUtils::merge($config, include $file);

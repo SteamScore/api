@@ -18,13 +18,29 @@ return [
     'debug' => false,
     'config_cache_enabled' => true,
     'dependencies' => [
+        'factories' => [
+            'Zend\Expressive\FinalHandler' => Zend\Expressive\Container\WhoopsErrorHandlerFactory::class,
+        ],
         'invokables' => [
             'Zend\Expressive\Whoops' => Whoops\Run::class,
             'Zend\Expressive\WhoopsPageHandler' => Whoops\Handler\PrettyPageHandler::class,
         ],
-        'factories' => [
-            'Zend\Expressive\FinalHandler' => Zend\Expressive\Container\WhoopsErrorHandlerFactory::class,
+    ],
+    'orm' => [
+        'connection' => [
+            'charset' => 'utf8mb4',
+            'collate' => 'utf8mb4_unicode_ci',
+            'dbname' => getenv('DB_DBNAME'),
+            'driver' => 'mysqli',
+            'host' => getenv('DB_HOST'),
+            'password' => getenv('DB_PASSWORD'),
+            'port' => getenv('DB_PORT'),
+            'user' => getenv('DB_USER'),
         ],
+        'mapping' => [
+            'data/orm' => 'SteamScore\Api\Domain\Entities',
+        ],
+        'proxies' => 'data/proxies',
     ],
     'version' => (new Version(getcwd()))->getVersion(),
     'whoops' => [

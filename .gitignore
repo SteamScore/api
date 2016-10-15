@@ -1,3 +1,4 @@
+/.env
 /.php_cs.cache
 /build/
 /node_modules/
