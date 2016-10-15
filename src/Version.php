@@ -30,6 +30,6 @@ final class Version extends SebastianVersion
      */
     public function __construct(string $cwd)
     {
-        return parent::__construct(self::VERSION, $cwd);
+        parent::__construct(self::VERSION, $cwd);
     }
 }
