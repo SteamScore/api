@@ -26,7 +26,7 @@ final class VersionActionFactory
      *
      * @return VersionAction
      */
-    public function __invoke(ContainerInterface $container) : VersionAction
+    public function __invoke(ContainerInterface $container): VersionAction
     {
         return new VersionAction($container->get('config')['version']);
     }

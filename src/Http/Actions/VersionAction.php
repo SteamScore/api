@@ -39,7 +39,7 @@ final class VersionAction implements MiddlewareInterface
     /**
      * {@inheritdoc}
      */
-    public function __invoke(ServerRequestInterface $request, ResponseInterface $response, callable $out = null) : ResponseInterface
+    public function __invoke(ServerRequestInterface $request, ResponseInterface $response, callable $out = null): ResponseInterface
     {
         return new JsonResponse(['version' => $this->version]);
     }

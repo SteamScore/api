@@ -45,7 +45,7 @@ final class Game
      *
      * @return Collection
      */
-    public function getAchievements() : Collection
+    public function getAchievements(): Collection
     {
         return $this->achievements;
     }
@@ -55,7 +55,7 @@ final class Game
      *
      * @return UuidInterface
      */
-    public function getId() : UuidInterface
+    public function getId(): UuidInterface
     {
         return $this->id;
     }

@@ -885,16 +885,16 @@
         },
         {
             "name": "paragonie/random_compat",
-            "version": "v2.0.2",
+            "version": "v2.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/paragonie/random_compat.git",
-                "reference": "088c04e2f261c33bed6ca5245491cfca69195ccf"
+                "reference": "c0125896dbb151380ab47e96c621741e79623beb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/paragonie/random_compat/zipball/088c04e2f261c33bed6ca5245491cfca69195ccf",
-                "reference": "088c04e2f261c33bed6ca5245491cfca69195ccf",
+                "url": "https://api.github.com/repos/paragonie/random_compat/zipball/c0125896dbb151380ab47e96c621741e79623beb",
+                "reference": "c0125896dbb151380ab47e96c621741e79623beb",
                 "shasum": ""
             },
             "require": {
@@ -929,7 +929,7 @@
                 "pseudorandom",
                 "random"
             ],
-            "time": "2016-04-03T06:00:07+00:00"
+            "time": "2016-10-17T15:23:22+00:00"
         },
         {
             "name": "psr/http-message",
@@ -2724,12 +2724,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/FriendsOfPHP/PHP-CS-Fixer.git",
-                "reference": "6fb6634b9c40f7f0b5eb831ed1d4dfbe872bef59"
+                "reference": "5c74ef1fb5184416eeda6a3cfb7b4a91e432c8cd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/FriendsOfPHP/PHP-CS-Fixer/zipball/6fb6634b9c40f7f0b5eb831ed1d4dfbe872bef59",
-                "reference": "6fb6634b9c40f7f0b5eb831ed1d4dfbe872bef59",
+                "url": "https://api.github.com/repos/FriendsOfPHP/PHP-CS-Fixer/zipball/5c74ef1fb5184416eeda6a3cfb7b4a91e432c8cd",
+                "reference": "5c74ef1fb5184416eeda6a3cfb7b4a91e432c8cd",
                 "shasum": ""
             },
             "require": {
@@ -2780,7 +2780,7 @@
                 }
             ],
             "description": "A tool to automatically fix PHP code style",
-            "time": "2016-10-15T19:08:33+00:00"
+            "time": "2016-10-17T18:04:08+00:00"
         },
         {
             "name": "gitonomy/gitlib",

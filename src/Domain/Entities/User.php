@@ -37,7 +37,7 @@ final class User
      *
      * @return UuidInterface
      */
-    public function getId() : UuidInterface
+    public function getId(): UuidInterface
     {
         return $this->id;
     }

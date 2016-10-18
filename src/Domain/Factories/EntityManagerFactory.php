@@ -31,7 +31,7 @@ final class EntityManagerFactory
      *
      * @return EntityManagerInterface
      */
-    public function __invoke(ContainerInterface $container) : EntityManagerInterface
+    public function __invoke(ContainerInterface $container): EntityManagerInterface
     {
         if (Type::hasType('uuid_binary') === false) {
             Type::addType('uuid_binary', UuidBinaryType::class);
