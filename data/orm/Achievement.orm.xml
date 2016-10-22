@@ -5,6 +5,6 @@
         <id name="id" column="id" type="uuid_binary">
             <generator strategy="NONE" />
         </id>
-        <many-to-one field="game" target-entity="Game" />
+        <many-to-one field="game" target-entity="Game" inversed-by="achievements" />
     </entity>
 </doctrine-mapping>

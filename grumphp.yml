@@ -8,9 +8,12 @@ parameters:
     composer:
       no_check_all: true
       strict: true
+    doctrine_orm:
+      skip_sync: true
     git_conflict: ~
     jsonlint:
       detect_key_conflicts: true
+    phpcpd: ~
     phpcs: ~
     phpcsfixer2:
       allow_risky: true
