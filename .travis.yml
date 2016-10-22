@@ -27,6 +27,7 @@ install:
 
 
 before_script:
+    - cp .env.dist .env
     - mkdir -p build/coverage
     - mkdir -p build/logs
 
