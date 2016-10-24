@@ -35,4 +35,10 @@ script:
   - ./vendor/bin/grumphp run
 
 after_script:
-  - sh .travis.coverage.sh
+  - sh ./.travis/coverage.sh
+
+after_success:
+  - openssl aes-256-cbc -K $encrypted_a837f529038e_key -iv $encrypted_a837f529038e_iv -in id_ed25519.enc -out id_ed25519 -d
+  - eval "$(ssh-agent -s)"
+  - chmod 600 .travis/id_ed25519
+  - ssh-add .travis/id_ed25519
