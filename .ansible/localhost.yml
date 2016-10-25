@@ -1,6 +1,6 @@
 ---
 -
-  hosts: webservers
+  hosts: localhost
   remote_user: steamscore
   tasks:
     -
