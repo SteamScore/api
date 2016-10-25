@@ -36,15 +36,21 @@ script:
 after_script:
   - sh ./.travis/coverage.sh
 
+before_deploy:
+  - openssl aes-256-cbc -K $encrypted_2fbddccfbf30_key -iv $encrypted_2fbddccfbf30_iv -in ./.travis/id_ed25519.enc -out ./.travis/id_ed25519 -d
+  - cp ./.travis/id_ed25519 $HOME/.ssh/id_ed25519
+  - chmod 600 $HOME/.ssh/id_ed25519
+  - pip install --user ansible
+
 deploy:
   - provider: script
-    script: sh ./.travis/deploy.sh development $TRAVIS_COMMIT
+    script: $HOME/.local/bin/ansible-playbook ./.ansible/webservers.yml -i ./.ansible/development -e 'git_commit=$TRAVIS_COMMIT'
     on:
       branch: master
       php: 7.0
       repo: SteamScore/api
   - provider: script
-    script: sh ./.travis/deploy.sh production $TRAVIS_TAG
+    script: $HOME/.local/bin/ansible-playbook ./.ansible/webservers.yml -i ./.ansible/production -e 'git_commit=$TRAVIS_TAG'
     on:
       php: 7.0
       repo: SteamScore/api
