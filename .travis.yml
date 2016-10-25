@@ -20,7 +20,6 @@ before_install:
   - phpenv config-rm xdebug.ini || return 0
 
 install:
-  - travis_retry composer self-update
   - travis_retry composer global require hirak/prestissimo
   - travis_retry composer install --no-interaction --prefer-dist
 
