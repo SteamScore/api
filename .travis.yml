@@ -43,13 +43,13 @@ before_deploy:
 
 deploy:
   - provider: script
-    script: $HOME/.local/bin/ansible-playbook ./.ansible/webservers.yml -i ./.ansible/development -e 'git_commit=$TRAVIS_COMMIT'
+    script: $HOME/.local/bin/ansible-playbook ./.ansible/site.yml -i ./.ansible/development -e 'git_commit=$TRAVIS_COMMIT'
     on:
       branch: master
       php: 7.0
       repo: SteamScore/api
   - provider: script
-    script: $HOME/.local/bin/ansible-playbook ./.ansible/webservers.yml -i ./.ansible/production -e 'git_commit=$TRAVIS_TAG'
+    script: $HOME/.local/bin/ansible-playbook ./.ansible/site.yml -i ./.ansible/production -e 'git_commit=$TRAVIS_TAG'
     on:
       php: 7.0
       repo: SteamScore/api
