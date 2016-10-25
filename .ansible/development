@@ -1,5 +1,5 @@
-[webservers]
-skywalker.pback.se:2222
+[localhost]
+localhost
 
-[webservers:vars]
-app_root=/var/www/api-dev.steamscore.info/
+[webservers]
+skywalker.pback.se:2222 app_root=/var/www/api-dev.steamscore.info/

@@ -1,0 +1,14 @@
+---
+-
+  hosts: webservers
+  remote_user: steamscore
+  tasks:
+    -
+      fail:
+        msg: "Variable \"host_key\" is required"
+      when: "host_key is not defined"
+    -
+      known_hosts:
+        key: "{{ host_key }}"
+        name: github.com
+        state: present
