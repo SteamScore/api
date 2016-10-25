@@ -1,0 +1,18 @@
+---
+-
+  hosts: webservers
+  remote_user: steamscore
+  tasks:
+    -
+      fail:
+        msg: "Variable \"app_root\" is required"
+      when: "app_root is not defined"
+    -
+      git:
+        accept_hostkey: true
+        depth: 1
+        dest: "{{ app_root }}"
+        repo: "git@github.com:SteamScore/api.git"
+        version: "{{ git_commit }}"
+  vars:
+    git_commit: HEAD

@@ -38,13 +38,13 @@ after_script:
 
 deploy:
   - provider: script
-    script: sh ./.travis/deploy.sh
+    script: sh ./.travis/deploy.sh development $TRAVIS_COMMIT
     on:
       branch: master
       php: 7.0
       repo: SteamScore/api
   - provider: script
-    script: sh ./.travis/deploy.sh
+    script: sh ./.travis/deploy.sh production $TRAVIS_TAG
     on:
       php: 7.0
       repo: SteamScore/api

@@ -1,0 +1,5 @@
+[webservers]
+skywalker.pback.se
+
+[webservers:vars]
+app_root=/var/www/api.steamscore.info/
