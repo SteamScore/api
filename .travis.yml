@@ -9,7 +9,6 @@ php:
 
 matrix:
   fast_finish: true
-
   allow_failures:
     - php: nightly
 
@@ -28,8 +27,8 @@ install:
 
 before_script:
   - cp .env.dist .env
-  - mkdir -p build/coverage
-  - mkdir -p build/logs
+  - mkdir -p ./build/coverage
+  - mkdir -p ./build/logs
 
 script:
   - ./vendor/bin/grumphp run
@@ -37,8 +36,16 @@ script:
 after_script:
   - sh ./.travis/coverage.sh
 
-after_success:
-  - openssl aes-256-cbc -K $encrypted_a837f529038e_key -iv $encrypted_a837f529038e_iv -in id_ed25519.enc -out id_ed25519 -d
-  - eval "$(ssh-agent -s)"
-  - chmod 600 .travis/id_ed25519
-  - ssh-add .travis/id_ed25519
+deploy:
+  - provider: script
+    script: sh ./.travis/deploy.sh
+    on:
+      branch: master
+      php: 7.0
+      repo: SteamScore/api
+  - provider: script
+    script: sh ./.travis/deploy.sh
+    on:
+      php: 7.0
+      repo: SteamScore/api
+      tags: true
