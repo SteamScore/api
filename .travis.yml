@@ -14,6 +14,7 @@ matrix:
 
 cache:
   directories:
+    - $HOME/.cache/pip
     - $HOME/.composer/cache
 
 before_install:
@@ -37,19 +38,17 @@ after_script:
 
 before_deploy:
   - openssl aes-256-cbc -K $encrypted_2fbddccfbf30_key -iv $encrypted_2fbddccfbf30_iv -in ./.travis/id_ed25519.enc -out ./.travis/id_ed25519 -d
-  - cp ./.travis/id_ed25519 $HOME/.ssh/id_ed25519
-  - chmod 600 $HOME/.ssh/id_ed25519
   - pip install --user ansible
 
 deploy:
   - provider: script
-    script: $HOME/.local/bin/ansible-playbook ./.ansible/site.yml -i ./.ansible/development -e 'git_commit=$TRAVIS_COMMIT'
+    script: $HOME/.local/bin/ansible-playbook ./.ansible/site.yml -i ./.ansible/development -e "git_commit=$TRAVIS_COMMIT ansible_ssh_private_key_file=$TRAVIS_BUILD_DIR/.travis/id_ed25519"
     on:
       branch: master
       php: 7.0
       repo: SteamScore/api
   - provider: script
-    script: $HOME/.local/bin/ansible-playbook ./.ansible/site.yml -i ./.ansible/production -e 'git_commit=$TRAVIS_TAG'
+    script: $HOME/.local/bin/ansible-playbook ./.ansible/site.yml -i ./.ansible/production -e "git_commit=$TRAVIS_TAG ansible_ssh_private_key_file=$TRAVIS_BUILD_DIR/.travis/id_ed25519"
     on:
       php: 7.0
       repo: SteamScore/api
