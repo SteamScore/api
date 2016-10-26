@@ -1,55 +1,48 @@
+---
+after_script:
+  - "sh ./.travis/coverage.sh"
+before_deploy:
+  - "openssl aes-256-cbc -K $encrypted_2fbddccfbf30_key -iv $encrypted_2fbddccfbf30_iv -in ./.travis/id_ed25519.enc -out ./.travis/id_ed25519 -d"
+  - "eval \"$(ssh-agent -s)\""
+  - "chmod 600 .travis/id_ed25519"
+  - "ssh-add .travis/id_ed25519"
+before_install:
+  - "phpenv config-rm xdebug.ini || return 0"
+before_script:
+  - "cp .env.dist .env"
+cache:
+  directories:
+    - $HOME/.composer/cache
+  pip: true
+deploy:
+  -
+    provider: script
+    script: "$HOME/.local/bin/ansible-playbook ./.ansible/site.yml -i ./.ansible/development -e \"git_commit=$TRAVIS_COMMIT\""
+    true:
+      branch: master
+      php: 7.0
+      repo: SteamScore/api
+  -
+    provider: script
+    script: "$HOME/.local/bin/ansible-playbook ./.ansible/site.yml -i ./.ansible/production -e \"git_commit=$TRAVIS_TAG\""
+    true:
+      php: 7.0
+      repo: SteamScore/api
+      tags: true
+install:
+  - "pip install --user ansible"
+  - "travis_retry composer global require hirak/prestissimo"
+  - "travis_retry composer install --no-interaction --prefer-dist"
 language: php
-
-sudo: false
-
+matrix:
+  allow_failures:
+    -
+      php: nightly
+  fast_finish: true
 php:
   - 7.0
   - 7.1
   - nightly
-
-matrix:
-  fast_finish: true
-  allow_failures:
-    - php: nightly
-
-cache:
-  directories:
-    - $HOME/.cache/pip
-    - $HOME/.composer/cache
-
-before_install:
-  - phpenv config-rm xdebug.ini || return 0
-
-install:
-  - travis_retry composer global require hirak/prestissimo
-  - travis_retry composer install --no-interaction --prefer-dist
-
-
-before_script:
-  - cp .env.dist .env
-  - mkdir -p ./build/coverage
-  - mkdir -p ./build/logs
-
 script:
-  - ./vendor/bin/grumphp run
-
-after_script:
-  - sh ./.travis/coverage.sh
-
-before_deploy:
-  - openssl aes-256-cbc -K $encrypted_2fbddccfbf30_key -iv $encrypted_2fbddccfbf30_iv -in ./.travis/id_ed25519.enc -out ./.travis/id_ed25519 -d
-  - pip install --user ansible
-
-deploy:
-  - provider: script
-    script: $HOME/.local/bin/ansible-playbook ./.ansible/site.yml -i ./.ansible/development -e "git_commit=$TRAVIS_COMMIT ansible_ssh_private_key_file=$TRAVIS_BUILD_DIR/.travis/id_ed25519"
-    on:
-      branch: master
-      php: 7.0
-      repo: SteamScore/api
-  - provider: script
-    script: $HOME/.local/bin/ansible-playbook ./.ansible/site.yml -i ./.ansible/production -e "git_commit=$TRAVIS_TAG ansible_ssh_private_key_file=$TRAVIS_BUILD_DIR/.travis/id_ed25519"
-    on:
-      php: 7.0
-      repo: SteamScore/api
-      tags: true
+  - "./vendor/bin/grumphp run"
+sudo: false
