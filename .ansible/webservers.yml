@@ -29,8 +29,8 @@
     - 
       lineinfile: 
         dest: "{{ app_root }}/.env"
-        line: "{{ item[0] }}={{ item[1] }}"
-        regexp: "^{{ item[0] }}="
+        line: "{{ item.key }}={{ item.value }}"
+        regexp: "^{{ item.key }}="
       with_items: 
         - 
           key: DB_DBNAME
@@ -48,7 +48,7 @@
           key: DB_USER
           value: "{{ hostvars[groups['dbservers'][0]].db_user }}"
     - 
-      composer: 
+      composer:
         arguments: "--classmap-authoritative"
         command: install
         no_dev: true
