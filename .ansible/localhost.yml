@@ -1,21 +1,26 @@
 ---
 -
   hosts: localhost
-  remote_user: steamscore
   tasks:
     -
       fail:
         msg: "Variable \"host_key\" is required for {{ host }}"
       when: "hostvars[item].host_key is not defined"
-      with_items: "{{ groups['webservers'] }}"
+      with_nested:
+        - "{{ groups['dbservers'] }}"
+        - "{{ groups['webservers'] }}"
     -
       fail:
         msg: "Variable \"host_name\" is required for {{ host }}"
       when: "hostvars[item].host_name is not defined"
-      with_items: "{{ groups['webservers'] }}"
+      with_nested:
+        - "{{ groups['dbservers'] }}"
+        - "{{ groups['webservers'] }}"
     -
       known_hosts:
         key: "{{ hostvars[item].host_key }}"
         name: "{{ hostvars[item].host_name }}"
         state: present
-      with_items: "{{ groups['webservers'] }}"
+      with_nested:
+        - "{{ groups['dbservers'] }}"
+        - "{{ groups['webservers'] }}"

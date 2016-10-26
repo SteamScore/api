@@ -4,10 +4,10 @@ after_failure:
 after_success:
   - "sh ./.travis/coverage.sh"
 before_deploy:
-  - "openssl aes-256-cbc -K $encrypted_2fbddccfbf30_key -iv $encrypted_2fbddccfbf30_iv -in ./.travis/id_rsa.enc -out $HOME/.ssh/id_rsa -d"
+  - "openssl aes-256-cbc -K $encrypted_2fbddccfbf30_key -iv $encrypted_2fbddccfbf30_iv -in ./.travis/id_rsa.enc -out /tmp/id_rsa -d"
   - "eval \"$(ssh-agent -s)\""
-  - "chmod 600 $HOME/.ssh/id_rsa"
-  - "ssh-add $HOME/.ssh/id_rsa"
+  - "chmod 600 /tmp/id_rsa"
+  - "ssh-add /tmp/id_rsa"
   - "pip install --user ansible"
 before_install:
   - "phpenv config-rm xdebug.ini || return 0"
@@ -19,20 +19,21 @@ cache:
 deploy:
   -
     provider: script
-    script: "$HOME/.local/bin/ansible-playbook ./.ansible/site.yml -i ./.ansible/development -e \"git_commit=$TRAVIS_COMMIT\""
-    on:
+    script: "$HOME/.local/bin/ansible-playbook ./.ansible/site.yml -i ./.ansible/development -e \"db_password=$DB_PASSWORD git_commit=$TRAVIS_COMMIT\""
+    true:
       branch: master
       php: 7.0
       repo: SteamScore/api
   -
     provider: script
-    script: "$HOME/.local/bin/ansible-playbook ./.ansible/site.yml -i ./.ansible/production -e \"git_commit=$TRAVIS_TAG\""
-    on:
+    script: "$HOME/.local/bin/ansible-playbook ./.ansible/site.yml -i ./.ansible/production -e \"db_password=$DB_PASSWORD git_commit=$TRAVIS_TAG\""
+    true:
       php: 7.0
       repo: SteamScore/api
       tags: true
 env:
-  - "ANSIBLE_SSH_ARGS=\"-o ForwardAgent=yes\""
+  global:
+    ANSIBLE_SSH_ARGS: "-o ForwardAgent=yes"
 install:
   - "travis_retry composer global require hirak/prestissimo"
   - "travis_retry composer install --no-interaction --prefer-dist"

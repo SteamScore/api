@@ -1,0 +1,4 @@
+---
+db_name: steamscore
+db_port: 3306
+db_user: steamscore

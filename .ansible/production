@@ -1,5 +1,8 @@
+[dbservers]
+yoda.pback.se:2222
+
 [localhost]
 localhost
 
 [webservers]
-skywalker.pback.se:2222 app_root=/var/www/api.steamscore.info/
+skywalker.pback.se:2222

@@ -1,3 +1,6 @@
+[dbservers]
+yoda.pback.se:2222 db_dbname=steamscore_dev
+
 [localhost]
 localhost
 
