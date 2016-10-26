@@ -1,54 +1,54 @@
----
--
+--- 
+- 
   hosts: webservers
   remote_user: steamscore
-  tasks:
-    -
-      fail:
+  tasks: 
+    - 
+      fail: 
         msg: "Variable \"app_root\" is required"
       when: "app_root is not defined"
-    -
-      fail:
+    - 
+      fail: 
         msg: "Variable \"db_password\" is required"
       when: "db_password is not defined"
-    -
-      known_hosts:
+    - 
+      known_hosts: 
         key: "github.com ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAq2A7hRGmdnm9tUDbO9IDSwBK6TbQa+PXYPCPy6rbTrTtw7PHkccKrpp0yVhp5HdEIcKr6pLlVDBfOLX9QUsyCOV0wzfjIJNlGEYsdlLJizHhbn2mUjvSAHQqZETYP81eFzLQNnPHt4EVVUh7VfDESU84KezmD5QlWpXLmvU31/yMf+Se8xhHTvKSCZIFImWwoG6mbUoWf9nzpIoaSjB+weqqUUmpaaasXVal72J+UX2B+2RPW3RcT0eOzQgqlJL3RKrTJvdsjE3JEAvGq3lGHSZXy28G3skua2SmVi/w4yCE6gbODqnTWlg7+wC604ydGXA8VJiS5ap43JXiUFFAaQ=="
         name: github.com
         state: present
-    -
-      git:
+    - 
+      git: 
         dest: "{{ app_root }}"
         repo: "git@github.com:SteamScore/api.git"
         version: "{{ git_commit }}"
-    -
-      copy:
+    - 
+      copy: 
         dest: "{{ app_root }}/.env"
         remote_src: true
         src: "{{ app_root }}/.env.dist"
-    -
-      lineinfile:
+    - 
+      lineinfile: 
         dest: "{{ app_root }}/.env"
         line: "{{ item[0] }}={{ item[1] }}"
         regexp: "^{{ item[0] }}="
-      with_items:
-        -
-          - DB_DBNAME
-          - "{{ hostvars[groups['dbservers'][0]].db_name }}"
-        -
-          - DB_HOST
-          - "{{ groups['dbservers'][0] }}"
-        -
-          - DB_PASSWORD
-          - "{{ db_password }}"
-        -
-          - DB_PORT
-          - "{{ hostvars[groups['dbservers'][0]].db_port }}"
-        -
-          - DB_USER
-          - "{{ hostvars[groups['dbservers'][0]].db_user }}"
-    -
-      composer:
+      with_items: 
+        - 
+          key: DB_DBNAME
+          value: "{{ hostvars[groups['dbservers'][0]].db_name }}"
+        - 
+          key: DB_HOST
+          value: "{{ groups['dbservers'][0] }}"
+        - 
+          key: DB_PASSWORD
+          value: "{{ db_password }}"
+        - 
+          key: DB_PORT
+          value: "{{ hostvars[groups['dbservers'][0]].db_port }}"
+        - 
+          key: DB_USER
+          value: "{{ hostvars[groups['dbservers'][0]].db_user }}"
+    - 
+      composer: 
         arguments: "--classmap-authoritative"
         command: install
         no_dev: true
