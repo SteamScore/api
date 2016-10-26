@@ -33,7 +33,7 @@ deploy:
       tags: true
 env:
   global:
-    ANSIBLE_SSH_ARGS: "-o ForwardAgent=yes"
+    ANSIBLE_SSH_ARGS: "\"-o ForwardAgent=yes\""
 install:
   - "travis_retry composer global require hirak/prestissimo"
   - "travis_retry composer install --no-interaction --prefer-dist"
