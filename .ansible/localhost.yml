@@ -5,10 +5,17 @@
   tasks:
     -
       fail:
-        msg: "Variable \"host_key\" is required"
-      when: "host_key is not defined"
+        msg: "Variable \"host_key\" is required for {{ host }}"
+      when: "hostvars[item].host_key is not defined"
+      with_items: "{{ groups['webservers'] }}"
+    -
+      fail:
+        msg: "Variable \"host_name\" is required for {{ host }}"
+      when: "hostvars[item].host_name is not defined"
+      with_items: "{{ groups['webservers'] }}"
     -
       known_hosts:
-        key: "{{ host_key }}"
-        name: github.com
+        key: "{{ hostvars[item].host_key }}"
+        name: "{{ hostvars[item].host_name }}"
         state: present
+      with_items: "{{ groups['webservers'] }}"
