@@ -32,7 +32,7 @@ deploy:
       repo: SteamScore/api
       tags: true
 env:
-  - "ANSIBLE_SSH_ARGS=\"-o ForwardAgent=yes\" ANSIBLE_TRANSPORT=\"ssh\""
+  - "ANSIBLE_SSH_ARGS=\"-o ForwardAgent=yes\""
 install:
   - "travis_retry composer global require hirak/prestissimo"
   - "travis_retry composer install --no-interaction --prefer-dist"
