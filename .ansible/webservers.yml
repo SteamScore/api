@@ -14,9 +14,16 @@
         state: present
     -
       git:
-        depth: 1
         dest: "{{ app_root }}"
         repo: "git@github.com:SteamScore/api.git"
         version: "{{ git_commit }}"
+    -
+      composer:
+        arguments: "--classmap-authoritative"
+        command: install
+        no_dev: yes
+        optimize_autoloader: yes
+        prefer_dist: yes
+        working_dir: "{{ app_root }}"
   vars:
     git_commit: HEAD
