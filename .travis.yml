@@ -1,5 +1,7 @@
 ---
-after_script:
+after_failure:
+  - "sh ./.travis/coverage.sh"
+after_success:
   - "sh ./.travis/coverage.sh"
 before_deploy:
   - "openssl aes-256-cbc -K $encrypted_2fbddccfbf30_key -iv $encrypted_2fbddccfbf30_iv -in ./.travis/id_rsa.enc -out $HOME/.ssh/id_rsa -d"
@@ -30,8 +32,7 @@ deploy:
       repo: SteamScore/api
       tags: true
 env:
-  - "ANSIBLE_SSH_ARGS=\"-o ForwardAgent=yes\""
-  - "ANSIBLE_TRANSPORT=\"ssh\""
+  - "ANSIBLE_SSH_ARGS=\"-o ForwardAgent=yes\" ANSIBLE_TRANSPORT=\"ssh\""
 install:
   - "travis_retry composer global require hirak/prestissimo"
   - "travis_retry composer install --no-interaction --prefer-dist"
