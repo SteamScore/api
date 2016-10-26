@@ -1,3 +1,3 @@
 ---
-host_key: "[skywalker.pback.se]:2222 ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICLqpocPG3ZavkBqyRY5Am6ob5J76Qok5oJgaUnF4RtJ"
+host_key: "[skywalker.pback.se]:2222 ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDiJCSTpWzp31xwiLWJActSIX1fSDUm+zwNuuxm00evktxKSnmzaf8qwl/sV27S9wv2yE86D3Jx4dnja2xzF/aHfPiC8I7jrgRodEuKFEazGsOkOCzqjgc2D3IK7oPXyYCrGQsWMSxfqOe7zFUgd3892opiQtdajLZpGd9WYri0q/9oVbMGduXgE3PAZDTVf16DTUmU+aEQJ5QNgimd4+0odkpCCTyu85KVq/oXIFDILL4MtLC9+CbDc4I7xk6i1nm/e517YLluQRo45stinyUa88VI50LrFlHMW4pukf/gjTe5yTHVmV3oN7qFjOvsylBRkjxL03Tc+C7b5NHZn0Hf"
 host_name: "[skywalker.pback.se]:2222"
