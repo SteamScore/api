@@ -1,7 +1,7 @@
 /.ansible/*.retry
 /.env
 /.php_cs.cache
-/.travis/id_ed25519
+/.travis/id_rsa
 /build/
 /node_modules/
 /phpunit.xml
