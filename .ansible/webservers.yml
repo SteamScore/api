@@ -31,7 +31,7 @@
         dest: "{{ app_root }}/.env"
         line: "{{ item[0] }}={{ item[1] }}"
         regexp: "^{{ item[0] }}="
-      with_nested:
+      with_items:
         -
           - DB_DBNAME
           - "{{ hostvars[groups['dbservers'][0]].db_name }}"

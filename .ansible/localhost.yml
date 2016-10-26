@@ -6,14 +6,14 @@
       fail:
         msg: "Variable \"host_key\" is required for {{ host }}"
       when: "hostvars[item].host_key is not defined"
-      with_nested:
+      with_items:
         - "{{ groups['dbservers'] }}"
         - "{{ groups['webservers'] }}"
     -
       fail:
         msg: "Variable \"host_name\" is required for {{ host }}"
       when: "hostvars[item].host_name is not defined"
-      with_nested:
+      with_items:
         - "{{ groups['dbservers'] }}"
         - "{{ groups['webservers'] }}"
     -
@@ -21,6 +21,6 @@
         key: "{{ hostvars[item].host_key }}"
         name: "{{ hostvars[item].host_name }}"
         state: present
-      with_nested:
+      with_items:
         - "{{ groups['dbservers'] }}"
         - "{{ groups['webservers'] }}"
