@@ -2,10 +2,10 @@
 after_script:
   - "sh ./.travis/coverage.sh"
 before_deploy:
-  - "openssl aes-256-cbc -K $encrypted_2fbddccfbf30_key -iv $encrypted_2fbddccfbf30_iv -in ./.travis/id_ed25519.enc -out ./.travis/id_ed25519 -d"
+  - "openssl aes-256-cbc -K $encrypted_2fbddccfbf30_key -iv $encrypted_2fbddccfbf30_iv -in ./.travis/id_ed25519.enc -out /tmp/id_ed25519 -d"
   - "eval \"$(ssh-agent -s)\""
-  - "chmod 600 .travis/id_ed25519"
-  - "ssh-add .travis/id_ed25519"
+  - "chmod 600 /tmp/id_ed25519"
+  - "ssh-add /tmp/id_ed25519"
 before_install:
   - "phpenv config-rm xdebug.ini || return 0"
 before_script:
@@ -18,14 +18,14 @@ deploy:
   -
     provider: script
     script: "$HOME/.local/bin/ansible-playbook ./.ansible/site.yml -i ./.ansible/development -e \"git_commit=$TRAVIS_COMMIT\""
-    true:
+    on:
       branch: master
       php: 7.0
       repo: SteamScore/api
   -
     provider: script
     script: "$HOME/.local/bin/ansible-playbook ./.ansible/site.yml -i ./.ansible/production -e \"git_commit=$TRAVIS_TAG\""
-    true:
+    on:
       php: 7.0
       repo: SteamScore/api
       tags: true
