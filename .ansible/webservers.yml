@@ -8,45 +8,15 @@
         msg: "Variable \"app_root\" is required"
       when: "app_root is not defined"
     - 
-      fail: 
-        msg: "Variable \"db_password\" is required"
-      when: "db_password is not defined"
-    - 
       known_hosts: 
         key: "github.com ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAq2A7hRGmdnm9tUDbO9IDSwBK6TbQa+PXYPCPy6rbTrTtw7PHkccKrpp0yVhp5HdEIcKr6pLlVDBfOLX9QUsyCOV0wzfjIJNlGEYsdlLJizHhbn2mUjvSAHQqZETYP81eFzLQNnPHt4EVVUh7VfDESU84KezmD5QlWpXLmvU31/yMf+Se8xhHTvKSCZIFImWwoG6mbUoWf9nzpIoaSjB+weqqUUmpaaasXVal72J+UX2B+2RPW3RcT0eOzQgqlJL3RKrTJvdsjE3JEAvGq3lGHSZXy28G3skua2SmVi/w4yCE6gbODqnTWlg7+wC604ydGXA8VJiS5ap43JXiUFFAaQ=="
         name: github.com
         state: present
     - 
-      git: 
+      git:
         dest: "{{ app_root }}"
         repo: "git@github.com:SteamScore/api.git"
         version: "{{ git_commit }}"
-    - 
-      copy: 
-        dest: "{{ app_root }}/.env"
-        remote_src: true
-        src: "{{ app_root }}/.env.dist"
-    - 
-      lineinfile: 
-        dest: "{{ app_root }}/.env"
-        line: "{{ item.key }}={{ item.value }}"
-        regexp: "^{{ item.key }}="
-      with_items: 
-        - 
-          key: DB_DBNAME
-          value: "{{ hostvars[groups['dbservers'][0]].db_name }}"
-        - 
-          key: DB_HOST
-          value: "{{ groups['dbservers'][0] }}"
-        - 
-          key: DB_PASSWORD
-          value: "{{ db_password }}"
-        - 
-          key: DB_PORT
-          value: "{{ hostvars[groups['dbservers'][0]].db_port }}"
-        -
-          key: DB_USER
-          value: "{{ hostvars[groups['dbservers'][0]].db_user }}"
     -
       composer:
         arguments: "--classmap-authoritative"

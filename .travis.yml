@@ -19,14 +19,14 @@ cache:
 deploy:
   -
     provider: script
-    script: "$HOME/.local/bin/ansible-playbook ./.ansible/site.yml -i ./.ansible/development -e \"db_password=$DB_PASSWORD git_commit=$TRAVIS_COMMIT\""
+    script: "$HOME/.local/bin/ansible-playbook ./.ansible/site.yml -i ./.ansible/development -e \"git_commit=$TRAVIS_COMMIT\""
     true:
       branch: master
       php: 7.0
       repo: SteamScore/api
   -
     provider: script
-    script: "$HOME/.local/bin/ansible-playbook ./.ansible/site.yml -i ./.ansible/production -e \"db_password=$DB_PASSWORD git_commit=$TRAVIS_TAG\""
+    script: "$HOME/.local/bin/ansible-playbook ./.ansible/site.yml -i ./.ansible/production -e \"git_commit=$TRAVIS_TAG\""
     true:
       php: 7.0
       repo: SteamScore/api

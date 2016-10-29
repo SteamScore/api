@@ -1,6 +1,3 @@
-[dbservers]
-yoda.pback.se:2222
-
 [localhost]
 localhost
 
