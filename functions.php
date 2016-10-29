@@ -31,7 +31,7 @@ namespace SteamScore\Api;
  *
  * @return mixed
  */
-function getenv($key, $default = null)
+function env($key, $default = null)
 {
     $value = getenv($key);
 
