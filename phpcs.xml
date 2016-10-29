@@ -9,6 +9,7 @@
 
     <!-- inherit rules from: -->
     <rule ref="Symfony2">
+        <exclude name="Squiz.Functions.GlobalFunction" />
         <exclude name="Symfony2.Commenting.ClassComment" />
         <exclude name="Symfony2.WhiteSpace.AssignmentSpacing.Invalid" />
     </rule>
@@ -54,8 +55,9 @@
 
     <!-- Paths to check -->
     <file>.php_cs</file>
-    <file>config</file>
-    <file>src</file>
-    <file>test</file>
-    <file>web</file>
+    <file>config/</file>
+    <file>functions.php</file>
+    <file>src/</file>
+    <file>test/</file>
+    <file>web/</file>
 </ruleset>

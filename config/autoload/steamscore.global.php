@@ -13,6 +13,7 @@ declare(strict_types=1);
  */
 
 use SteamScore\Api\Version;
+use function SteamScore\Api\getenv;
 
 return [
     'debug' => false,
@@ -30,12 +31,12 @@ return [
         'connection' => [
             'charset' => 'utf8mb4',
             'collate' => 'utf8mb4_unicode_ci',
-            'dbname' => getenv('DB_DBNAME'),
+            'dbname' => getenv('DB_DBNAME', 'steamscore'),
             'driver' => 'mysqli',
-            'host' => getenv('DB_HOST'),
-            'password' => getenv('DB_PASSWORD'),
-            'port' => getenv('DB_PORT'),
-            'user' => getenv('DB_USER'),
+            'host' => getenv('DB_HOST', 'localhost'),
+            'password' => getenv('DB_PASSWORD', 'steamscore'),
+            'port' => getenv('DB_PORT', 3306),
+            'user' => getenv('DB_USER', 'steamscore'),
         ],
         'mapping' => [
             'data/orm' => 'SteamScore\Api\Domain\Entities',

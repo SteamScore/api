@@ -49,7 +49,10 @@
     "autoload": {
         "psr-4": {
             "SteamScore\\Api\\": "src/"
-        }
+        },
+        "files": [
+            "functions.php"
+        ]
     },
     "autoload-dev": {
         "psr-4": {
