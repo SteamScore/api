@@ -67,6 +67,9 @@
         "sort-packages": true
     },
     "scripts": {
+        "generate-docs": [
+            "node_modules/.bin/aglio -i docs/steamscore.v1.apib -o build/steamscore.v1.html --theme-full-width --theme-template triple"
+        ]
     },
     "extra": {
         "branch-alias": {

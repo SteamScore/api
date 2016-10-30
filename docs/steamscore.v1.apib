@@ -1,0 +1,91 @@
+FORMAT: 1A
+HOST: https://api.steamscore.info
+
+# SteamScore JSON API (v1)
+
+# Group Achievements
+
+## List [GET /achievements]
+
++ Response 200 (application/vnd.api+json)
+    + Attributes (Base Response)
+        - links
+            - self: `https://api.steamscore.info/achievements`
+
+## View [GET /achievements/{id}]
+
++ Parameters
+    - id: `355dc04d-6f57-4140-adb5-8fc4be7175b1` (string, required) - Unique identifier of the achievement.
+
++ Response 200 (application/vnd.api+json)
+    + Attributes (Base Response)
+        - links
+            - self: `https://api.steamscore.info/achievements/355dc04d-6f57-4140-adb5-8fc4be7175b1`
+
+# Group Games
+
+## List [GET /games]
+
++ Response 200 (application/vnd.api+json)
+    + Attributes (Base Response)
+        - links
+            - self: https://api.steamscore.info/games
+
+## View [GET /games/{id}]
+
++ Parameters
+    - id: `24bdfcc0-7829-44cb-b60d-8e48d4b9930d` (string, required) - Unique identifier of the game.
+
++ Response 200 (application/vnd.api+json)
+    + Attributes (Base Response)
+        - links
+            - self: `https://api.steamscore.info/games/24bdfcc0-7829-44cb-b60d-8e48d4b9930d`
+
+# Group Meta
+
+## Version [GET /version]
+
++ Response 200 (application/vnd.api+json)
+    + Attributes (Base Response)
+        - links
+            - self: https://api.steamscore.info/version
+        - meta (object, required)
+            - version: 1.0.0 (string, required)
+
+# Group Users
+
+## List [GET /users]
+
++ Response 200 (application/vnd.api+json)
+    + Attributes (Base Response)
+        - links
+            - self: https://api.steamscore.info/users
+        - data (array[User], required)
+
+## View [GET /users/{id}]
+
++ Parameters
+    - id: `33c1d637-8c1e-4e83-9de9-167a4d8993c5` (string, required) - Unique identifier of the user.
+
++ Response 200 (application/vnd.api+json)
+    + Attributes (Base Response)
+        - links
+            - self: `https://api.steamscore.info/users/33c1d637-8c1e-4e83-9de9-167a4d8993c5`
+        - data (User, required)
+
+# Data Structures
+
+## Base Response (object, fixed-type)
+
+- links (object, required)
+    - self (string, required)
+- jsonapi (object, required, fixed-type)
+    - version: 1.0 (enum[string], required, default)
+        - 1.0
+
+## User (object, fixed-type)
+
+- type: `users` (enum[string], required, default)
+    - `users`
+- id: `33c1d637-8c1e-4e83-9de9-167a4d8993c5` (string, required)
+- attributes (object, required)

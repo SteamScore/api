@@ -2724,12 +2724,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/FriendsOfPHP/PHP-CS-Fixer.git",
-                "reference": "2277bb1e2336368b5fec5cca0ffb2e70b694a16f"
+                "reference": "e55aa52679a7bb9c45657aa4107851296a8cf16a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/FriendsOfPHP/PHP-CS-Fixer/zipball/2277bb1e2336368b5fec5cca0ffb2e70b694a16f",
-                "reference": "2277bb1e2336368b5fec5cca0ffb2e70b694a16f",
+                "url": "https://api.github.com/repos/FriendsOfPHP/PHP-CS-Fixer/zipball/e55aa52679a7bb9c45657aa4107851296a8cf16a",
+                "reference": "e55aa52679a7bb9c45657aa4107851296a8cf16a",
                 "shasum": ""
             },
             "require": {
@@ -2780,7 +2780,7 @@
                 }
             ],
             "description": "A tool to automatically fix PHP code style",
-            "time": "2016-10-29T22:04:08+00:00"
+            "time": "2016-10-30T09:55:46+00:00"
         },
         {
             "name": "gitonomy/gitlib",
