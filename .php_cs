@@ -53,4 +53,4 @@ return PhpCsFixer\Config::create()->setUsingCache(true)->setRules([
     'short_array_syntax' => true,
     'strict_comparison' => true,
     'strict_param' => true,
-])->finder($finder);
+])->setFinder($finder);
