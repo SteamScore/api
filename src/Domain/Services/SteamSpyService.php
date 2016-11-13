@@ -16,6 +16,7 @@ namespace SteamScore\Api\Domain\Services;
 use bandwidthThrottle\tokenBucket\TokenBucket;
 use GuzzleHttp\ClientInterface;
 use Psr\Http\Message\ResponseInterface;
+use SteamScore\Api\Domain\Exceptions\JsonDecodeException;
 use SteamScore\Api\Domain\Exceptions\RateLimitException;
 
 final class SteamSpyService
@@ -105,8 +106,7 @@ final class SteamSpyService
         $json = json_decode($body, true);
 
         if (JSON_ERROR_NONE !== json_last_error()) {
-            // @todo: Custom exception
-            throw new \Exception(sprintf('Unable to decode data to JSON in %s: %s', __CLASS__, json_last_error_msg()));
+            throw new JsonDecodeException(sprintf('Unable to decode data to JSON in %s: %s', __CLASS__, json_last_error_msg()));
         }
 
         return $json;
