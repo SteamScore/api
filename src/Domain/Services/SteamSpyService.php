@@ -61,7 +61,7 @@ final class SteamSpyService
     public function findAll(): array
     {
         if ($this->bucket->consume(1, $seconds) === false) {
-            throw new RateLimitException($seconds);
+            throw new RateLimitException((float) $seconds);
         }
 
         $response = $this->client->request('GET', self::BASE_URI, [
@@ -83,7 +83,7 @@ final class SteamSpyService
     public function findByAppId(int $appId): array
     {
         if ($this->bucket->consume(1, $seconds) === false) {
-            throw new RateLimitException($seconds);
+            throw new RateLimitException((float) $seconds);
         }
 
         $response = $this->client->request('GET', self::BASE_URI, [
