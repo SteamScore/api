@@ -12,6 +12,7 @@ parameters:
     git_conflict: ~
     jsonlint:
       detect_key_conflicts: true
+    phan: ~
     phpcpd: ~
     phpcs: ~
     phpcsfixer2:

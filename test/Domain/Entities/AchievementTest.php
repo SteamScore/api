@@ -1,5 +1,4 @@
 <?php
-
 declare(strict_types=1);
 
 /*
@@ -14,15 +13,15 @@ declare(strict_types=1);
 
 namespace SteamScore\Api\Tests\Domain\Entities;
 
-use PHPUnit\Framework\TestCase;
 use Ramsey\Uuid\UuidInterface;
 use SteamScore\Api\Domain\Entities\Achievement;
 use SteamScore\Api\Domain\Entities\Game;
+use SteamScore\Api\Tests\AbstractTestCase;
 
 /**
- * @coversDefaultClass Achievement
+ * @covers SteamScore\Api\Domain\Entities\Achievement
  */
-class AchievementTest extends TestCase
+class AchievementTest extends AbstractTestCase
 {
     /**
      * Tests that `getGame()` returns a game.

@@ -1,5 +1,4 @@
 <?php
-
 declare(strict_types=1);
 
 /*
@@ -12,15 +11,15 @@ declare(strict_types=1);
  * file, You can obtain one at http://mozilla.org/MPL/2.0/.
  */
 
-namespace SteamScore\Api\Tests\Http\Factories;
+namespace SteamScore\Api\Tests\Factory\Actions;
 
 use Interop\Container\ContainerInterface;
+use SteamScore\Api\Factory\Actions\VersionActionFactory;
 use SteamScore\Api\Http\Actions\VersionAction;
-use SteamScore\Api\Http\Factories\VersionActionFactory;
 use SteamScore\Api\Tests\AbstractTestCase;
 
 /**
- * @coversDefaultClass VersionActionFactory
+ * @covers SteamScore\Api\Factory\Actions\VersionActionFactory
  */
 final class VersionActionFactoryTest extends AbstractTestCase
 {

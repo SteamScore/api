@@ -11,13 +11,13 @@ declare(strict_types=1);
  * file, You can obtain one at http://mozilla.org/MPL/2.0/.
  */
 
-use Doctrine\ORM\EntityManagerInterface;
-use Doctrine\ORM\Tools\Console\ConsoleRunner;
+use SteamScore\Api\Console;
+use SteamScore\Api\Factory;
 
-chdir(dirname(__DIR__));
-require 'vendor/autoload.php';
-
-$container = require 'config/container.php';
-$entityManager = $container->get(EntityManagerInterface::class);
-
-return ConsoleRunner::createHelperSet($entityManager);
+return [
+    'dependencies' => [
+        'factories' => [
+            Console\Commands\BucketBootstrapCommand::class => Factory\Commands\BucketBootstrapCommandFactory::class,
+        ],
+    ],
+];

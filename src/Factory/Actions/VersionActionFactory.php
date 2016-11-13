@@ -1,5 +1,4 @@
 <?php
-
 declare(strict_types=1);
 
 /*
@@ -12,7 +11,7 @@ declare(strict_types=1);
  * file, You can obtain one at http://mozilla.org/MPL/2.0/.
  */
 
-namespace SteamScore\Api\Http\Factories;
+namespace SteamScore\Api\Factory\Actions;
 
 use Interop\Container\ContainerInterface;
 use SteamScore\Api\Http\Actions\VersionAction;

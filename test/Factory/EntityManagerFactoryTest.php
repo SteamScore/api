@@ -1,5 +1,4 @@
 <?php
-
 declare(strict_types=1);
 
 /*
@@ -12,17 +11,17 @@ declare(strict_types=1);
  * file, You can obtain one at http://mozilla.org/MPL/2.0/.
  */
 
-namespace SteamScore\Api\Tests\Domain\Factories;
+namespace SteamScore\Api\Tests\Factory;
 
 use Doctrine\ORM\EntityManagerInterface;
 use Interop\Container\ContainerInterface;
-use PHPUnit\Framework\TestCase;
-use SteamScore\Api\Domain\Factories\EntityManagerFactory;
+use SteamScore\Api\Factory\EntityManagerFactory;
+use SteamScore\Api\Tests\AbstractTestCase;
 
 /**
- * @coversDefaultClass EntityManagerFactory
+ * @covers SteamScore\Api\Factory\EntityManagerFactory
  */
-class EntityManagerFactoryTest extends TestCase
+class EntityManagerFactoryTest extends AbstractTestCase
 {
     /**
      * Tests that the factory is invokable.

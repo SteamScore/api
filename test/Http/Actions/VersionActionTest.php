@@ -1,5 +1,4 @@
 <?php
-
 declare(strict_types=1);
 
 /*
@@ -14,15 +13,15 @@ declare(strict_types=1);
 
 namespace SteamScore\Api\Tests\Http\Actions;
 
-use PHPUnit\Framework\TestCase;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use SteamScore\Api\Http\Actions\VersionAction;
+use SteamScore\Api\Tests\AbstractTestCase;
 
 /**
- * @coversDefaultClass VersionAction
+ * @covers SteamScore\Api\Http\Actions\VersionAction
  */
-class VersionActionTest extends TestCase
+class VersionActionTest extends AbstractTestCase
 {
     /**
      * Tests that the action is invokable.

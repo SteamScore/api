@@ -1,5 +1,4 @@
 <?php
-
 declare(strict_types=1);
 
 /*
@@ -14,13 +13,12 @@ declare(strict_types=1);
 
 namespace SteamScore\Api\Tests;
 
-use PHPUnit\Framework\TestCase;
 use SteamScore\Api\Version;
 
 /**
- * @coversDefaultClass Version
+ * @covers SteamScore\Api\Version
  */
-final class VersionTest extends TestCase
+final class VersionTest extends AbstractTestCase
 {
     /**
      * Tests that the class is instantiable.

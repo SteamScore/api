@@ -1,5 +1,4 @@
 <?php
-
 declare(strict_types=1);
 
 /*
@@ -15,14 +14,14 @@ declare(strict_types=1);
 namespace SteamScore\Api\Tests\Domain\Entities;
 
 use Doctrine\Common\Collections\Collection;
-use PHPUnit\Framework\TestCase;
 use Ramsey\Uuid\UuidInterface;
 use SteamScore\Api\Domain\Entities\Game;
+use SteamScore\Api\Tests\AbstractTestCase;
 
 /**
- * @coversDefaultClass Game
+ * @covers SteamScore\Api\Domain\Entities\Game
  */
-class GameTest extends TestCase
+class GameTest extends AbstractTestCase
 {
     /**
      * Tests that `getAchievements()` returns a collection.

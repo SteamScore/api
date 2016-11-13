@@ -1,5 +1,4 @@
 <?php
-
 declare(strict_types=1);
 
 /*
@@ -12,12 +11,26 @@ declare(strict_types=1);
  * file, You can obtain one at http://mozilla.org/MPL/2.0/.
  */
 
+use bandwidthThrottle\tokenBucket\Rate;
+use SteamScore\Api\Domain\Services\SteamSpyService;
 use SteamScore\Api\Version;
 use function SteamScore\Api\env;
 
 return [
-    'debug' => false,
+    'buckets' => [
+        'steam' => [
+            'capacity' => 200,
+            'tokens' => 200 / 5,
+            'unit' => Rate::MINUTE,
+        ],
+        SteamSpyService::BUCKET => [
+            'capacity' => 4,
+            'tokens' => 4,
+            'unit' => Rate::SECOND,
+        ],
+    ],
     'config_cache_enabled' => true,
+    'debug' => false,
     'dependencies' => [
         'factories' => [
             'Zend\Expressive\FinalHandler' => Zend\Expressive\Container\WhoopsErrorHandlerFactory::class,

@@ -1,5 +1,4 @@
 <?php
-
 declare(strict_types=1);
 
 /*
@@ -14,14 +13,14 @@ declare(strict_types=1);
 
 namespace SteamScore\Api\Tests\Domain\Entities;
 
-use PHPUnit\Framework\TestCase;
 use Ramsey\Uuid\UuidInterface;
 use SteamScore\Api\Domain\Entities\User;
+use SteamScore\Api\Tests\AbstractTestCase;
 
 /**
- * @coversDefaultClass User
+ * @covers SteamScore\Api\Domain\Entities\User
  */
-class UserTest extends TestCase
+class UserTest extends AbstractTestCase
 {
     /**
      * Tests that `getId()` returns a UUID.

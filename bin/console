@@ -13,6 +13,7 @@ declare(strict_types=1);
  * file, You can obtain one at http://mozilla.org/MPL/2.0/.
  */
 
+use SteamScore\Api\Console\Commands;
 use Symfony\Component\Console\Application;
 
 chdir(dirname(__DIR__));
@@ -20,5 +21,7 @@ require 'vendor/autoload.php';
 
 $container = require 'config/container.php';
 $application = new Application('SteamScore JSON API', $container->get('config')['version']);
+
+$application->add($container->get(Commands\BucketBootstrapCommand::class));
 
 $application->run();

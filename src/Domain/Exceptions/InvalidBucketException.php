@@ -11,13 +11,10 @@ declare(strict_types=1);
  * file, You can obtain one at http://mozilla.org/MPL/2.0/.
  */
 
-use Doctrine\ORM\EntityManagerInterface;
-use Doctrine\ORM\Tools\Console\ConsoleRunner;
+namespace SteamScore\Api\Domain\Exceptions;
 
-chdir(dirname(__DIR__));
-require 'vendor/autoload.php';
+use Exception;
 
-$container = require 'config/container.php';
-$entityManager = $container->get(EntityManagerInterface::class);
-
-return ConsoleRunner::createHelperSet($entityManager);
+final class InvalidBucketException extends Exception
+{
+}
