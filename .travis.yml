@@ -17,6 +17,7 @@ before_script:
 cache:
   directories:
     - $HOME/.composer/cache
+    - ./build/ast
 deploy:
   -
     provider: script
