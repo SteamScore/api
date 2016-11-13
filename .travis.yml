@@ -1,8 +1,8 @@
 ---
 after_failure:
-  - "sh ./.travis/coverage.sh"
+  - "./.travis/coverage.sh"
 after_success:
-  - "sh ./.travis/coverage.sh"
+  - "./.travis/coverage.sh"
 before_deploy:
   - "openssl aes-256-cbc -K $encrypted_2fbddccfbf30_key -iv $encrypted_2fbddccfbf30_iv -in ./.travis/id_rsa.enc -out /tmp/id_rsa -d"
   - "eval \"$(ssh-agent -s)\""
@@ -10,7 +10,7 @@ before_deploy:
   - "ssh-add /tmp/id_rsa"
   - "pip install --user ansible"
 before_install:
-  - "sh ./.travis/ext-ast.sh"
+  - "./.travis/ext-ast.sh"
   - "phpenv config-rm xdebug.ini || return 0"
 before_script:
   - "cp .env.dist .env"
