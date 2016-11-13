@@ -5,8 +5,6 @@
 # Copyright (c) 2015 Rasmus Lerdorf
 # Copyright (c) 2015 Andrew Morrison
 
-set -x
-
 function build {
     phpize
     ./configure
