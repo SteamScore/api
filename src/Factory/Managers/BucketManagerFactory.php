@@ -14,7 +14,7 @@ declare(strict_types=1);
 namespace SteamScore\Api\Factory\Managers;
 
 use Interop\Container\ContainerInterface;
-use Predis\ClientInterface;
+use Predis\Client;
 use SteamScore\Api\Domain\Interfaces\BucketManagerInterface;
 use SteamScore\Api\Domain\Managers\BucketManager;
 
@@ -29,6 +29,6 @@ final class BucketManagerFactory
      */
     public function __invoke(ContainerInterface $container): BucketManagerInterface
     {
-        return new BucketManager($container->get(ClientInterface::class), $container->get('config')['buckets']);
+        return new BucketManager($container->get(Client::class), $container->get('config')['buckets']);
     }
 }

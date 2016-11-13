@@ -15,18 +15,17 @@ namespace SteamScore\Api\Factory;
 
 use Interop\Container\ContainerInterface;
 use Predis\Client;
-use Predis\ClientInterface;
 
 final class PredisClientFactory
 {
     /**
-     * Creates an instanced implementation of `Predis\ClientInterface`.
+     * Creates an instanced implementation of `Predis\Client`.
      *
      * @param ContainerInterface $container
      *
-     * @return ClientInterface
+     * @return Client
      */
-    public function __invoke(ContainerInterface $container): ClientInterface
+    public function __invoke(ContainerInterface $container): Client
     {
         return new Client();
     }

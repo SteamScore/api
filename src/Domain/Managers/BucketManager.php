@@ -16,7 +16,7 @@ namespace SteamScore\Api\Domain\Managers;
 use bandwidthThrottle\tokenBucket\Rate;
 use bandwidthThrottle\tokenBucket\storage\PredisStorage;
 use bandwidthThrottle\tokenBucket\TokenBucket;
-use Predis\ClientInterface;
+use Predis\Client;
 use SteamScore\Api\Domain\Exceptions\InvalidBucketException;
 use SteamScore\Api\Domain\Interfaces\BucketManagerInterface;
 
@@ -30,10 +30,10 @@ final class BucketManager implements BucketManagerInterface
     /**
      * Constructor.
      *
-     * @param ClientInterface $client
-     * @param array           $buckets
+     * @param Client $client
+     * @param array  $buckets
      */
-    public function __construct(ClientInterface $client, array $buckets)
+    public function __construct(Client $client, array $buckets)
     {
         foreach ($buckets as $name => $bucket) {
             $storage = new PredisStorage(sprintf('bucket:%s', $name), $client);

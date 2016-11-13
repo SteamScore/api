@@ -12,7 +12,7 @@ declare(strict_types=1);
  */
 
 use Doctrine\ORM\EntityManagerInterface;
-use Predis\ClientInterface;
+use Predis\Client;
 use SteamScore\Api\Domain;
 use SteamScore\Api\Factory;
 use Zend\Expressive\Application;
@@ -26,7 +26,7 @@ return [
         ],
         'factories' => [
             Application::class => ApplicationFactory::class,
-            ClientInterface::class => Factory\PredisClientFactory::class,
+            Client::class => Factory\PredisClientFactory::class,
             Domain\Interfaces\BucketManagerInterface::class => Factory\Managers\BucketManagerFactory::class,
             EntityManagerInterface::class => Factory\EntityManagerFactory::class,
             Helper\UrlHelper::class => Helper\UrlHelperFactory::class,

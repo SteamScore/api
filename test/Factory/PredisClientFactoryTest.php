@@ -14,7 +14,7 @@ declare(strict_types=1);
 namespace SteamScore\Api\Tests\Factory;
 
 use Interop\Container\ContainerInterface;
-use Predis\ClientInterface;
+use Predis\Client;
 use SteamScore\Api\Factory\PredisClientFactory;
 use SteamScore\Api\Tests\AbstractTestCase;
 
@@ -32,6 +32,6 @@ class PredisClientFactoryTest extends AbstractTestCase
         $factory = new PredisClientFactory();
         $instance = $factory($container->reveal());
 
-        $this->assertInstanceOf(ClientInterface::class, $instance);
+        $this->assertInstanceOf(Client::class, $instance);
     }
 }

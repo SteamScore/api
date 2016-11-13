@@ -14,7 +14,7 @@ declare(strict_types=1);
 namespace SteamScore\Api\Tests\Factory\Managers;
 
 use Interop\Container\ContainerInterface;
-use Predis\ClientInterface;
+use Predis\Client;
 use SteamScore\Api\Domain\Managers\BucketManager;
 use SteamScore\Api\Factory\Managers\BucketManagerFactory;
 use SteamScore\Api\Tests\AbstractTestCase;
@@ -30,11 +30,11 @@ final class BucketManagerFactoryTest extends AbstractTestCase
     public function testIfInvokable()
     {
         $container = $this->prophesize(ContainerInterface::class);
-        $predis = $this->prophesize(ClientInterface::class);
+        $predis = $this->prophesize(Client::class);
         $factory = new BucketManagerFactory();
 
         $container->get('config')->willReturn(['buckets' => []]);
-        $container->get(ClientInterface::class)->willReturn($predis->reveal());
+        $container->get(Client::class)->willReturn($predis->reveal());
 
         $instance = $factory($container->reveal());
 
