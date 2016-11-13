@@ -10,6 +10,7 @@ before_deploy:
   - "ssh-add /tmp/id_rsa"
   - "pip install --user ansible"
 before_install:
+  - "sh ./.travis/ext-ast.sh"
   - "phpenv config-rm xdebug.ini || return 0"
 before_script:
   - "cp .env.dist .env"
