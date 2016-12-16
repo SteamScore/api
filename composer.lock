@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "f2056635a90629f93dfb1f087409f99a",
+    "content-hash": "22acda51e3aa46b2d879fef4d82175ea",
     "packages": [
         {
             "name": "bandwidth-throttle/token-bucket",
@@ -3165,16 +3165,16 @@
         },
         {
             "name": "etsy/phan",
-            "version": "0.6",
+            "version": "0.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/etsy/phan.git",
-                "reference": "ea92e93008491b780fbaf3e97487845e3f60c78f"
+                "reference": "f34fd878924c8b46f96ce60560b2c1fe37e3150f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/etsy/phan/zipball/ea92e93008491b780fbaf3e97487845e3f60c78f",
-                "reference": "ea92e93008491b780fbaf3e97487845e3f60c78f",
+                "url": "https://api.github.com/repos/etsy/phan/zipball/f34fd878924c8b46f96ce60560b2c1fe37e3150f",
+                "reference": "f34fd878924c8b46f96ce60560b2c1fe37e3150f",
                 "shasum": ""
             },
             "require": {
@@ -3185,7 +3185,7 @@
             },
             "require-dev": {
                 "phpdocumentor/phpdocumentor": "dev-master",
-                "phpunit/phpunit": "~5",
+                "phpunit/phpunit": "5.4.8",
                 "squizlabs/php_codesniffer": "^2.5"
             },
             "bin": [
@@ -3216,7 +3216,7 @@
                 "php",
                 "static"
             ],
-            "time": "2016-07-15T21:17:33+00:00"
+            "time": "2016-12-02T19:59:47+00:00"
         },
         {
             "name": "friendsofphp/php-cs-fixer",

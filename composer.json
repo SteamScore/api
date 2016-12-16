@@ -38,7 +38,7 @@
     },
     "require-dev": {
         "escapestudios/symfony2-coding-standard": "^2.0",
-        "etsy/phan": "^0.6",
+        "etsy/phan": "^0.7",
         "friendsofphp/php-cs-fixer": "^v2.0",
         "jakub-onderka/php-parallel-lint": "^0.9",
         "phpro/grumphp": "^0.10",
