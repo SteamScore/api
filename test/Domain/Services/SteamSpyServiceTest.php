@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 /*
@@ -25,7 +26,7 @@ use SteamScore\Api\Domain\Services\SteamSpyService;
 use SteamScore\Api\Tests\AbstractTestCase;
 
 /**
- * @covers SteamScore\Api\Domain\Services\SteamSpyService
+ * @covers \SteamScore\Api\Domain\Services\SteamSpyService
  */
 class SteamSpyServiceTest extends AbstractTestCase
 {

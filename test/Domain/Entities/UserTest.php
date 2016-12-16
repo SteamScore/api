@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 /*
@@ -18,7 +19,7 @@ use SteamScore\Api\Domain\Entities\User;
 use SteamScore\Api\Tests\AbstractTestCase;
 
 /**
- * @covers SteamScore\Api\Domain\Entities\User
+ * @covers \SteamScore\Api\Domain\Entities\User
  */
 class UserTest extends AbstractTestCase
 {

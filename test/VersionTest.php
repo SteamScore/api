@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 /*
@@ -16,7 +17,7 @@ namespace SteamScore\Api\Tests;
 use SteamScore\Api\Version;
 
 /**
- * @covers SteamScore\Api\Version
+ * @covers \SteamScore\Api\Version
  */
 final class VersionTest extends AbstractTestCase
 {

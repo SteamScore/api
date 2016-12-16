@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 /*
@@ -20,7 +21,7 @@ use SteamScore\Api\Factory\Managers\BucketManagerFactory;
 use SteamScore\Api\Tests\AbstractTestCase;
 
 /**
- * @covers SteamScore\Api\Factory\Managers\BucketManagerFactory
+ * @covers \SteamScore\Api\Factory\Managers\BucketManagerFactory
  */
 final class BucketManagerFactoryTest extends AbstractTestCase
 {

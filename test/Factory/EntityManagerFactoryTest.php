@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 /*
@@ -19,7 +20,7 @@ use SteamScore\Api\Factory\EntityManagerFactory;
 use SteamScore\Api\Tests\AbstractTestCase;
 
 /**
- * @covers SteamScore\Api\Factory\EntityManagerFactory
+ * @covers \SteamScore\Api\Factory\EntityManagerFactory
  */
 class EntityManagerFactoryTest extends AbstractTestCase
 {

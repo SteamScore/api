@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 /*
@@ -20,7 +21,7 @@ use SteamScore\Api\Tests\AbstractTestCase;
 use Symfony\Component\Console\Tester\CommandTester;
 
 /**
- * @covers SteamScore\Api\Console\Commands\BucketBootstrapCommand
+ * @covers \SteamScore\Api\Console\Commands\BucketBootstrapCommand
  */
 class BucketBootstrapCommandTest extends AbstractTestCase
 {

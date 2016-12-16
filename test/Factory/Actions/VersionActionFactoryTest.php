@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 /*
@@ -19,7 +20,7 @@ use SteamScore\Api\Http\Actions\VersionAction;
 use SteamScore\Api\Tests\AbstractTestCase;
 
 /**
- * @covers SteamScore\Api\Factory\Actions\VersionActionFactory
+ * @covers \SteamScore\Api\Factory\Actions\VersionActionFactory
  */
 final class VersionActionFactoryTest extends AbstractTestCase
 {

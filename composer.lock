@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "f59a2f0ffd331e8cdb8c52e4f98dbfb2",
+    "content-hash": "f2056635a90629f93dfb1f087409f99a",
     "packages": [
         {
             "name": "bandwidth-throttle/token-bucket",
@@ -1026,16 +1026,16 @@
         },
         {
             "name": "http-interop/http-middleware",
-            "version": "0.2.1",
+            "version": "0.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/http-interop/http-middleware.git",
-                "reference": "08c50a4c571b2ac6c8efcdb4371cb06e1c90820c"
+                "reference": "ff545c87e97bf4d88f0cb7eb3e89f99aaa53d7a9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/http-interop/http-middleware/zipball/08c50a4c571b2ac6c8efcdb4371cb06e1c90820c",
-                "reference": "08c50a4c571b2ac6c8efcdb4371cb06e1c90820c",
+                "url": "https://api.github.com/repos/http-interop/http-middleware/zipball/ff545c87e97bf4d88f0cb7eb3e89f99aaa53d7a9",
+                "reference": "ff545c87e97bf4d88f0cb7eb3e89f99aaa53d7a9",
                 "shasum": ""
             },
             "require": {
@@ -1074,7 +1074,7 @@
                 "request",
                 "response"
             ],
-            "time": "2016-11-19T15:51:20+00:00"
+            "time": "2016-09-25T13:30:27+00:00"
         },
         {
             "name": "lcobucci/jwt",
@@ -3752,16 +3752,16 @@
         },
         {
             "name": "phpro/grumphp",
-            "version": "v0.9.6",
+            "version": "v0.10.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpro/grumphp.git",
-                "reference": "201a37592b2cd90271c9befc9b881715c7f98027"
+                "reference": "d9e1561299c8079188ae96b7c8a47339b4b9ff08"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpro/grumphp/zipball/201a37592b2cd90271c9befc9b881715c7f98027",
-                "reference": "201a37592b2cd90271c9befc9b881715c7f98027",
+                "url": "https://api.github.com/repos/phpro/grumphp/zipball/d9e1561299c8079188ae96b7c8a47339b4b9ff08",
+                "reference": "d9e1561299c8079188ae96b7c8a47339b4b9ff08",
                 "shasum": ""
             },
             "require": {
@@ -3770,28 +3770,29 @@
                 "doctrine/collections": "~1.2",
                 "gitonomy/gitlib": "~1.0",
                 "monolog/monolog": "~1.17",
-                "php": ">=5.3.6",
+                "ocramius/proxy-manager": "~0.4|~1.0|~2.0",
+                "php": ">=5.6.0",
                 "seld/jsonlint": "~1.1",
-                "symfony/config": "~2.4|~3.0",
-                "symfony/console": "~2.6|~3.0",
-                "symfony/dependency-injection": "~2.4|~3.0",
-                "symfony/event-dispatcher": "~2.5|~3.0",
-                "symfony/filesystem": "~2.4|~3.0",
-                "symfony/finder": "~2.4|~3.0",
-                "symfony/options-resolver": "~2.6|~3.0",
-                "symfony/process": "~2.4|~3.0",
-                "symfony/proxy-manager-bridge": "~2.6|~3.0",
-                "symfony/yaml": "~2.4|~3.0"
+                "symfony/config": "~2.7|~3.0",
+                "symfony/console": "~2.7|~3.0",
+                "symfony/dependency-injection": "~2.7|~3.0",
+                "symfony/event-dispatcher": "~2.7|~3.0",
+                "symfony/filesystem": "~2.7|~3.0",
+                "symfony/finder": "~2.7|~3.0",
+                "symfony/options-resolver": "~2.7|~3.0",
+                "symfony/process": "~2.7|~3.0",
+                "symfony/proxy-manager-bridge": "~2.7|~3.0",
+                "symfony/yaml": "~2.7|~3.0"
             },
             "require-dev": {
                 "friendsofphp/php-cs-fixer": "~1|~2",
                 "jakub-onderka/php-parallel-lint": "^0.9.2",
-                "phpspec/phpspec": "~2.5",
+                "nikic/php-parser": "~2.1",
+                "phpspec/phpspec": "~3.0",
                 "phpspec/prophecy": "~1.6",
                 "phpunit/phpunit": "^4.8",
                 "sensiolabs/security-checker": "^3.0",
-                "squizlabs/php_codesniffer": "~2.3",
-                "sstalle/php7cc": "^1.1"
+                "squizlabs/php_codesniffer": "~2.3"
             },
             "suggest": {
                 "atoum/atoum": "Lets GrumPHP run your unit tests.",
@@ -3802,6 +3803,7 @@
                 "friendsofphp/php-cs-fixer": "Lets GrumPHP automatically fix your codestyle.",
                 "jakub-onderka/php-parallel-lint": "Lets GrumPHP quickly lint your entire code base.",
                 "malukenho/kawaii-gherkin": "Lets GrumPHP lint your Gherkin files.",
+                "nikic/php-parser": "Lets GrumPHP run static analyses through your PHP files.",
                 "phing/phing": "Lets GrumPHP run your automated PHP tasks.",
                 "phpmd/phpmd": "Lets GrumPHP sort out the mess in your code",
                 "phpspec/phpspec": "Lets GrumPHP spec your code.",
@@ -3839,7 +3841,7 @@
                 }
             ],
             "description": "A composer plugin that enables source code quality checks.",
-            "time": "2016-10-20T15:51:56+00:00"
+            "time": "2016-12-12T14:44:24+00:00"
         },
         {
             "name": "phpspec/prophecy",
@@ -5969,8 +5971,7 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "roave/security-advisories": 20,
-        "friendsofphp/php-cs-fixer": 10
+        "roave/security-advisories": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

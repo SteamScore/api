@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 /*
@@ -17,7 +18,7 @@ use SteamScore\Api\Domain\Exceptions\RateLimitException;
 use SteamScore\Api\Tests\AbstractTestCase;
 
 /**
- * @covers SteamScore\Api\Domain\Exceptions\RateLimitException
+ * @covers \SteamScore\Api\Domain\Exceptions\RateLimitException
  */
 class RateLimitExceptionTest extends AbstractTestCase
 {
