@@ -41,7 +41,7 @@
         "etsy/phan": "^0.7",
         "friendsofphp/php-cs-fixer": "^v2.0",
         "jakub-onderka/php-parallel-lint": "^0.9",
-        "phpro/grumphp": "^0.10",
+        "phpro/grumphp": "^0.11",
         "phpspec/prophecy": "^1.0",
         "phpunit/phpunit": "^5.0",
         "sebastian/phpcpd": "^2.0",
