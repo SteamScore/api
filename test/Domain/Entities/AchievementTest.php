@@ -25,22 +25,43 @@ use SteamScore\Api\Tests\AbstractTestCase;
 class AchievementTest extends AbstractTestCase
 {
     /**
-     * Tests that `getGame()` returns a game.
+     * Provdes tests with achievement objects.
+     *
+     * @return array
      */
-    public function testGetGame()
+    public function achievementObjectsProvider()
     {
-        $achievement = new Achievement(new Game());
+        return [
+            [
+                new Achievement(new Game(
+                    316790,
+                    'Grim Fandango Remastered',
+                    'Double Fine Productions',
+                    'Double Fine Productions',
+                    76,
+                    330606
+                )),
+            ],
+        ];
+    }
 
+    /**
+     * Tests that `getGame()` returns a game.
+     *
+     * @dataProvider achievementObjectsProvider
+     */
+    public function testGetGame(Achievement $achievement)
+    {
         $this->assertInstanceOf(Game::class, $achievement->getGame());
     }
 
     /**
      * Tests that `getId()` returns a UUID.
+     *
+     * @dataProvider achievementObjectsProvider
      */
-    public function testGetId()
+    public function testGetId(Achievement $achievement)
     {
-        $achievement = new Achievement(new Game());
-
         $this->assertInstanceOf(UuidInterface::class, $achievement->getId());
     }
 }

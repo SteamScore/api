@@ -24,12 +24,26 @@ use SteamScore\Api\Tests\AbstractTestCase;
 class UserTest extends AbstractTestCase
 {
     /**
-     * Tests that `getId()` returns a UUID.
+     * Provdes tests with user objects.
+     *
+     * @return array
      */
-    public function testGetId()
+    public function userObjectsProvider()
     {
-        $achievement = new User();
+        return [
+            [
+                new User(),
+            ],
+        ];
+    }
 
-        $this->assertInstanceOf(UuidInterface::class, $achievement->getId());
+    /**
+     * Tests that `getId()` returns a UUID.
+     *
+     * @dataProvider userObjectsProvider
+     */
+    public function testGetId(User $user)
+    {
+        $this->assertInstanceOf(UuidInterface::class, $user->getId());
     }
 }

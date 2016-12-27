@@ -15,7 +15,7 @@
        "source": "https://github.com/jyggen/SteamScore"
     },
     "require": {
-        "php": "^7.0",
+        "php": "^7.1",
         "bandwidth-throttle/token-bucket": "^1.0",
         "beberlei/assert": "^2.0",
         "filp/whoops": "^2.0",
@@ -37,7 +37,6 @@
         "zendframework/zend-stdlib": "^3.0"
     },
     "require-dev": {
-        "escapestudios/symfony2-coding-standard": "^2.0",
         "etsy/phan": "^0.7",
         "friendsofphp/php-cs-fixer": "^v2.0",
         "jakub-onderka/php-parallel-lint": "^0.9",
@@ -46,7 +45,6 @@
         "phpunit/phpunit": "^5.0",
         "sebastian/phpcpd": "^2.0",
         "sensiolabs/security-checker": "^4.0",
-        "squizlabs/php_codesniffer": "^2.0",
         "symfony/var-dumper": "^3.0"
 
     },
@@ -65,7 +63,7 @@
     },
     "config": {
         "platform": {
-            "php": "7.0"
+            "php": "7.1"
         },
         "preferred-install": "dist",
         "sort-packages": true
@@ -73,6 +71,9 @@
     "scripts": {
         "generate-docs": [
             "node_modules/.bin/aglio -i docs/steamscore.v1.apib -o build/steamscore.v1.html --theme-full-width --theme-template triple"
+        ],
+        "serve": [
+            "php -S 0.0.0.0:8080 -t web web/index.php"
         ]
     },
     "extra": {

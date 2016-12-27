@@ -23,5 +23,6 @@ $container = require 'config/container.php';
 $application = new Application('SteamScore JSON API', $container->get('config')['version']);
 
 $application->add($container->get(Commands\BucketBootstrapCommand::class));
+$application->add($container->get(Commands\GamesFetchCommand::class));
 
 $application->run();

@@ -5,6 +5,12 @@
         <id name="id" column="id" type="uuid_binary">
             <generator strategy="NONE" />
         </id>
+        <field name="appId" type="integer" unique="true" />
+        <field name="developer" type="string" nullable="true" />
+        <field name="name" type="string" />
+        <field name="players" type="integer" />
+        <field name="publisher" type="string" nullable="true" />
+        <field name="scoreRank" type="integer" nullable="true" />
         <one-to-many field="achievements" target-entity="Achievement" mapped-by="game" />
     </entity>
 </doctrine-mapping>

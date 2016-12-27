@@ -24,13 +24,13 @@ deploy:
     script: "$HOME/.local/bin/ansible-playbook ./.ansible/site.yml -i ./.ansible/development -e \"git_commit=$TRAVIS_COMMIT\""
     true:
       branch: master
-      php: 7.0
+      php: 7.1
       repo: SteamScore/api
   -
     provider: script
     script: "$HOME/.local/bin/ansible-playbook ./.ansible/site.yml -i ./.ansible/production -e \"git_commit=$TRAVIS_TAG\""
     true:
-      php: 7.0
+      php: 7.1
       repo: SteamScore/api
       tags: true
 env:
@@ -46,7 +46,6 @@ matrix:
       php: nightly
   fast_finish: true
 php:
-  - 7.0
   - 7.1
   - nightly
 script:

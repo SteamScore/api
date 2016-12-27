@@ -29,6 +29,7 @@ return [
             Application::class => ApplicationFactory::class,
             Client::class => Factory\PredisClientFactory::class,
             Domain\Interfaces\BucketManagerInterface::class => Factory\Managers\BucketManagerFactory::class,
+            Domain\Services\SteamSpyService::class => Factory\Services\SteamSpyServiceFactory::class,
             EntityManagerInterface::class => Factory\EntityManagerFactory::class,
             Helper\UrlHelper::class => Helper\UrlHelperFactory::class,
         ],

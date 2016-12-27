@@ -12,14 +12,13 @@ declare(strict_types=1);
  * file, You can obtain one at http://mozilla.org/MPL/2.0/.
  */
 
-use SteamScore\Api\Console;
+use SteamScore\Api\Domain\Jobs;
 use SteamScore\Api\Factory;
 
 return [
     'dependencies' => [
         'factories' => [
-            Console\Commands\BucketBootstrapCommand::class => Factory\Commands\BucketBootstrapCommandFactory::class,
-            Console\Commands\GamesFetchCommand::class => Factory\Commands\GamesFetchCommandFactory::class,
+            Jobs\FetchAllGamesJob::class => Factory\Jobs\FetchAllGamesJobFactory::class,
         ],
     ],
 ];

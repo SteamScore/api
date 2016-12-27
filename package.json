@@ -1,6 +1,6 @@
 {
   "private": true,
   "devDependencies": {
-    "aglio": "^2.0"
+    "aglio": "^2.3"
   }
 }

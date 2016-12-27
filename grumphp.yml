@@ -13,7 +13,6 @@ parameters:
     jsonlint:
       detect_key_conflicts: true
     phpcpd: ~
-    phpcs: ~
     phpcsfixer2:
       allow_risky: true
     phplint:

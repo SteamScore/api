@@ -27,6 +27,7 @@ file, You can obtain one at http://mozilla.org/MPL/2.0/.
 EOF;
 
 return PhpCsFixer\Config::create()->setUsingCache(true)->setRules([
+    '@PHP56Migration' => true,
     '@PHP70Migration' => true,
     '@PHP71Migration' => true,
     '@Symfony' => true,
@@ -40,23 +41,24 @@ return PhpCsFixer\Config::create()->setUsingCache(true)->setRules([
     'header_comment' => [
         'header' => $header,
     ],
+    'heredoc_to_nowdoc' => true,
     'linebreak_after_opening_tag' => true,
     'mb_str_functions' => true,
     'modernize_types_casting' => true,
     'no_multiline_whitespace_before_semicolons' => true,
     'no_php4_constructor' => true,
+    'no_unreachable_default_argument_value' => true,
     'no_useless_else' => true,
     'no_useless_return' => true,
-    'not_operator_with_space' => true,
-    'not_operator_with_successor_space' => true,
     'ordered_class_elements' => true,
     'ordered_imports' => true,
-    'php_unit_construct' => true,
-    'php_unit_dedicate_assert' => true,
     'php_unit_strict' => true,
+    'phpdoc_add_missing_param_annotation' => true,
     'phpdoc_order' => true,
     'protected_to_private' => true,
     'psr4' => true,
+    'semicolon_after_instruction' => true,
+    'simplified_null_return' => true,
     'strict_comparison' => true,
     'strict_param' => true,
 ])->setFinder($finder);
