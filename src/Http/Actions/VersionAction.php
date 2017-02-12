@@ -16,7 +16,7 @@ namespace SteamScore\Api\Http\Actions;
 
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
-use Zend\Diactoros\Response\JsonResponse;
+use SteamScore\Api\Http\Document;
 use Zend\Stratigility\MiddlewareInterface;
 
 final class VersionAction implements MiddlewareInterface
@@ -41,6 +41,6 @@ final class VersionAction implements MiddlewareInterface
      */
     public function __invoke(ServerRequestInterface $request, ResponseInterface $response, callable $out = null): ResponseInterface
     {
-        return new JsonResponse(['version' => $this->version]);
+        return Document::create()->withMeta('version', $this->version)->toPsrHttpResponse($request, $response);
     }
 }

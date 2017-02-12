@@ -1,16 +1,17 @@
 <doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping"
                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
                   xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping https://raw.github.com/doctrine/doctrine2/master/doctrine-mapping.xsd">
-    <entity name="SteamScore\Api\Domain\Entities\Game" table="games">
-        <id name="id" column="id" type="uuid_binary">
+    <entity name="SteamScore\Api\Domain\Entities\Game" repository-class="SteamScore\Api\Domain\Repositories\GameRepository" table="games">
+        <options>
+            <option name="charset">utf8mb4</option>
+            <option name="collate">utf8mb4_unicode_ci</option>
+        </options>
+        <id name="id" column="id" type="integer">
             <generator strategy="NONE" />
         </id>
-        <field name="appId" type="integer" unique="true" />
-        <field name="developer" type="string" nullable="true" />
         <field name="name" type="string" />
         <field name="players" type="integer" />
-        <field name="publisher" type="string" nullable="true" />
-        <field name="scoreRank" type="integer" nullable="true" />
+        <field name="scoreRank" type="integer" />
         <one-to-many field="achievements" target-entity="Achievement" mapped-by="game" />
     </entity>
 </doctrine-mapping>

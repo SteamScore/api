@@ -12,14 +12,16 @@ declare(strict_types=1);
  * file, You can obtain one at http://mozilla.org/MPL/2.0/.
  */
 
-namespace SteamScore\Api\Domain\Interfaces;
+namespace SteamScore\Api\Domain\Jobs;
 
-interface JobInterface
+use SteamScore\Api\Domain\Interfaces\JobInterface;
+
+final class SyncUserJob implements JobInterface
 {
     /**
-     * Executes the job.
-     *
-     * @param array $args
+     * {@inheritdoc}
      */
-    public function execute(array $args = []): void;
+    public function execute(array $args = []): void
+    {
+    }
 }

@@ -47,7 +47,7 @@ aglio-theme-olio@^1.6.3:
     moment "^2.8.4"
     stylus "^0.51.1"
 
-aglio@^2.0:
+aglio@^2.3:
   version "2.3.0"
   resolved "https://registry.yarnpkg.com/aglio/-/aglio-2.3.0.tgz#9f7462f01520996415278a02d0e20b36ec96adcc"
   dependencies:

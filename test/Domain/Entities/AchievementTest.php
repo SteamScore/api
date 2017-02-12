@@ -36,8 +36,6 @@ class AchievementTest extends AbstractTestCase
                 new Achievement(new Game(
                     316790,
                     'Grim Fandango Remastered',
-                    'Double Fine Productions',
-                    'Double Fine Productions',
                     76,
                     330606
                 )),

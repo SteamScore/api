@@ -14,7 +14,6 @@ declare(strict_types=1);
 
 namespace SteamScore\Api\Tests\Domain\Entities;
 
-use Ramsey\Uuid\UuidInterface;
 use SteamScore\Api\Domain\Entities\User;
 use SteamScore\Api\Tests\AbstractTestCase;
 
@@ -32,7 +31,7 @@ class UserTest extends AbstractTestCase
     {
         return [
             [
-                new User(),
+                new User('76561197961959558'),
             ],
         ];
     }
@@ -44,6 +43,6 @@ class UserTest extends AbstractTestCase
      */
     public function testGetId(User $user)
     {
-        $this->assertInstanceOf(UuidInterface::class, $user->getId());
+        $this->assertSame('76561197961959558', $user->getId());
     }
 }

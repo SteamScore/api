@@ -15,7 +15,6 @@ declare(strict_types=1);
 namespace SteamScore\Api\Tests\Domain\Entities;
 
 use Doctrine\Common\Collections\Collection;
-use Ramsey\Uuid\UuidInterface;
 use SteamScore\Api\Domain\Entities\Game;
 use SteamScore\Api\Tests\AbstractTestCase;
 
@@ -36,8 +35,6 @@ class GameTest extends AbstractTestCase
                 new Game(
                     316790,
                     'Grim Fandango Remastered',
-                    'Double Fine Productions',
-                    'Double Fine Productions',
                     76,
                     330606
                 ),
@@ -62,6 +59,6 @@ class GameTest extends AbstractTestCase
      */
     public function testGetId(Game $game)
     {
-        $this->assertInstanceOf(UuidInterface::class, $game->getId());
+        $this->assertSame(316790, $game->getId());
     }
 }

@@ -45,21 +45,24 @@ final class FetchAllGamesJob implements JobInterface
     /**
      * {@inheritdoc}
      */
-    public function execute(array $args = [])
+    public function execute(array $args = []): void
     {
         $remoteGames = $this->steamSpy->findAll();
         $localGames = $this->entities->getRepository(Game::class)->findAll();
         $localGames = array_reduce($localGames, function (array $carry, Game $game) {
-            $carry[$game->getAppId()] = $game;
+            $carry[$game->getId()] = $game;
 
             return $carry;
         }, []);
 
         foreach ($remoteGames as $remoteGame) {
+            if (is_int($remoteGame['score_rank']) === false) {
+                continue;
+            }
+
             $game = $localGames[$remoteGame['appid']] ?? $this->newGame($remoteGame);
 
-            // @todo: Update data on existing games.
-
+            $game->update(trim($remoteGame['name']), $remoteGame['score_rank'], $remoteGame['players_forever']);
             $this->entities->persist($game);
             unset($localGames[$remoteGame['appid']]);
         }
@@ -71,14 +74,12 @@ final class FetchAllGamesJob implements JobInterface
         $this->entities->flush();
     }
 
-    private function newGame(array $gameData)
+    private function newGame(array $gameData): Game
     {
         return new Game(
             $gameData['appid'],
-            $gameData['name'],
-            ($gameData['developer'] !== '' && $gameData['developer'] !== null) ? $gameData['developer'] : null,
-            ($gameData['publisher'] !== '' && $gameData['publisher'] !== null) ? $gameData['publisher'] : null,
-            ($gameData['score_rank'] !== '' && $gameData['score_rank'] !== null) ? $gameData['score_rank'] : null,
+            trim($gameData['name']),
+            $gameData['score_rank'],
             $gameData['players_forever']
         );
     }

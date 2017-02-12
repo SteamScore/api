@@ -14,30 +14,29 @@ declare(strict_types=1);
 
 namespace SteamScore\Api\Domain\Entities;
 
-use Ramsey\Uuid\Uuid;
-use Ramsey\Uuid\UuidInterface;
-
 final class User
 {
     /**
-     * @var UuidInterface
+     * @var string
      */
     private $id;
 
     /**
      * Constructor.
+     *
+     * @param string $id
      */
-    public function __construct()
+    public function __construct(string $id)
     {
-        $this->id = Uuid::uuid4();
+        $this->id = $id;
     }
 
     /**
      * Gets the unique identifier.
      *
-     * @return UuidInterface
+     * @return string
      */
-    public function getId(): UuidInterface
+    public function getId(): string
     {
         return $this->id;
     }

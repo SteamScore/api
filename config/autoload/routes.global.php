@@ -21,10 +21,17 @@ return [
             Zend\Expressive\Router\RouterInterface::class => Zend\Expressive\Router\ZendRouter::class,
         ],
         'factories' => [
+            Actions\ListGamesAction::class => Factory\Actions\ListGamesActionFactory::class,
             Actions\VersionAction::class => Factory\Actions\VersionActionFactory::class,
         ],
     ],
     'routes' => [
+        [
+            'name' => 'listGames',
+            'path' => '/games',
+            'middleware' => Actions\ListGamesAction::class,
+            'allowed_methods' => ['GET'],
+        ],
         [
             'name' => 'version',
             'path' => '/version',
