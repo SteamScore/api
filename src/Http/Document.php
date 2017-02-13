@@ -18,6 +18,7 @@ use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 use Tobscure\JsonApi\Document as JsonApiDocument;
 use Tobscure\JsonApi\ElementInterface;
+use Tobscure\JsonApi\Resource;
 
 final class Document extends JsonApiDocument
 {
@@ -153,7 +154,7 @@ final class Document extends JsonApiDocument
     public function toPsrHttpResponse(RequestInterface $request, ResponseInterface $response): ResponseInterface
     {
         $this->setJsonapi(['version' => '1.0']);
-        $this->AddLink('self', (string) $request->getUri());
+        $this->addLink('self', (string) $request->getUri());
 
         $errors = $this->errors;
         $statusCode = $response->getStatusCode();

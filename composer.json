@@ -39,11 +39,11 @@
         "zendframework/zend-stdlib": "^3.0"
     },
     "require-dev": {
-        "etsy/phan": "^0.7",
         "friendsofphp/php-cs-fixer": "^v2.0",
         "jakub-onderka/php-parallel-lint": "^0.9",
         "phpro/grumphp": "^0.11",
         "phpspec/prophecy": "^1.0",
+        "phpstan/phpstan": "^0.6",
         "phpunit/phpunit": "^5.0",
         "sebastian/phpcpd": "^2.0",
         "sensiolabs/security-checker": "^4.0",

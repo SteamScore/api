@@ -50,7 +50,7 @@ final class ListGamesAction implements MiddlewareInterface
         $sort = $parameters->getSort(GameSerializer::SORT_FIELDS);
         $limit = $parameters->getLimit(GameSerializer::DEFAULT_LIMIT);
         $offset = $parameters->getOffset();
-        $collection = new Collection($this->games->findAll($sort, $limit, offset), new GameSerializer());
+        $collection = new Collection($this->games->findAll(), new GameSerializer());
 
         return Document::create($collection)->toPsrHttpResponse($request, $response);
     }

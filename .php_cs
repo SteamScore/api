@@ -12,10 +12,9 @@ declare(strict_types=1);
  * file, You can obtain one at http://mozilla.org/MPL/2.0/.
  */
 
+use PhpCsFixer\Config;
 use PhpCsFixer\Finder;
-use PhpCsFixer\Fixer\Comment\HeaderCommentFixer;
 
-$finder = Finder::create()->exclude('build')->exclude('data')->in(__DIR__);
 $header = <<<'EOF'
 This file is part of SteamScore.
 
@@ -26,11 +25,20 @@ License, v. 2.0. If a copy of the MPL was not distributed with this
 file, You can obtain one at http://mozilla.org/MPL/2.0/.
 EOF;
 
-return PhpCsFixer\Config::create()->setUsingCache(true)->setRules([
+$config = Config::create();
+$finder = Finder::create()->name('.php_cs')->ignoreDotFiles(false)->exclude([
+    'build',
+])->in(__DIR__);
+
+$config->setFinder($finder);
+$config->setIndent(str_repeat(' ', 4));
+$config->setLineEnding("\n");
+$config->setRiskyAllowed(true);
+$config->setUsingCache(true);
+$config->setRules([
     '@PHP56Migration' => true,
     '@PHP70Migration' => true,
-    '@PHP71Migration' => true,
-    '@Symfony' => true,
+    '@Symfony:risky' => true,
     'array_syntax' => [
         'syntax' => 'short',
     ],
@@ -38,6 +46,7 @@ return PhpCsFixer\Config::create()->setUsingCache(true)->setRules([
     'declare_strict_types' => true,
     'dir_constant' => true,
     'ereg_to_preg' => true,
+    'general_phpdoc_annotation_remove' => [],
     'header_comment' => [
         'header' => $header,
     ],
@@ -47,6 +56,7 @@ return PhpCsFixer\Config::create()->setUsingCache(true)->setRules([
     'modernize_types_casting' => true,
     'no_multiline_whitespace_before_semicolons' => true,
     'no_php4_constructor' => true,
+    'no_short_echo_tag' => true,
     'no_unreachable_default_argument_value' => true,
     'no_useless_else' => true,
     'no_useless_return' => true,
@@ -58,7 +68,9 @@ return PhpCsFixer\Config::create()->setUsingCache(true)->setRules([
     'protected_to_private' => true,
     'psr4' => true,
     'semicolon_after_instruction' => true,
-    'simplified_null_return' => true,
     'strict_comparison' => true,
     'strict_param' => true,
-])->setFinder($finder);
+    'ternary_to_null_coalescing' => true,
+]);
+
+return $config;

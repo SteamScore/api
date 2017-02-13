@@ -20,14 +20,6 @@ use SteamScore\Api\Domain\Entities\Game;
 
 final class GameRepository extends EntityRepository
 {
-    public function findAll(array $orderBy, int $limit, int $offset): Collection
-    {
-        $query = $this->_em->createQuery(vsprintf('SELECT g FROM %s g ORDER BY g.name', [
-            Game::class,
-        ]));
-
-        return $query->setMaxResults($limit)->getResult();
-    }
 }
 
 /*
